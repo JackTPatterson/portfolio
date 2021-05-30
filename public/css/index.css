@@ -1,0 +1,150 @@
+body {
+
+    font-family: "Montserrat" !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+
+
+
+#title-main {
+
+    -webkit-animation: slide-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    font-weight: bold;
+}
+
+#title-main-2 {
+
+    -webkit-animation: slide-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation-delay: .3s;
+    font-weight: black;
+}
+
+
+#title-sub {
+    -webkit-animation: slide-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation-delay: .5s;
+}
+
+@keyframes slide-top {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(-100px);
+        opacity: 1;
+    }
+}
+
+#main-btn {
+    -webkit-animation: slide-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation-delay: .6s;
+    margin-top: 100px;
+
+}
+
+#main-btn:hover {
+    transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-color: lightgrey;
+    margin-top: 95px;
+}
+
+#main-btn:focus {
+    border: none;
+    outline: none;
+}
+
+#submit-btn:hover {
+    transition: .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-color: lightgrey;
+}
+
+#submit-btn:focus {
+    border: none;
+    outline: none;
+}
+
+.arrow-up {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateY(calc(50%));
+}
+
+#triangle-svg {
+    z-index: -1;
+    top: -200px;
+
+}
+
+#circle-svg {
+    z-index: -1;
+}
+
+#work-txt::after {
+    border-bottom: 2px solid white;
+}
+
+#git-link:hover {
+
+    transition: all .5s;
+    background-color: white;
+    stroke: black;
+    animation: grow;
+    padding: 2px;
+    cursor: pointer;
+
+}
+
+#git-svg:hover {
+
+    transition: all .5s;
+    background-color: transparent;
+    stroke: black;
+    padding: 2px;
+    cursor: pointer;
+
+}
+
+#git-link:not(:hover) {
+    transition: all .5s;
+    animation: shrink;
+}
+
+@keyframes grow {
+    from {
+        background-color: transparent;
+        stroke: white;
+    }
+    to {
+        background-color: white;
+        stroke: black;
+    }
+}
+
+@keyframes shrink {
+    
+    from {
+        background-color: white;
+        stroke: black;
+        background-size: 150%;
+    }
+
+    to {
+
+        background-color: transparent;
+        stroke: white;
+        background-size: 0%;
+    }
+}
+
+
