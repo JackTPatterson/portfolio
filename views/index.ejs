@@ -8,12 +8,14 @@
     <div id='default' class='px-5 mx-auto max-w-4xl'>
         <div id='wrapper' class='lg:flex lg:justify-center' style='height: 1.8em; justify-content: space-between;'>
             <div id='split-1' class='mr-5 max-w-xl'>
-                <h1 class='text-5xl mb-6 mt-5' style='line-height: 1.25em;'><strong>Hello, I'm Jack<br>A Student
+                <h1 class='text-5xl mb-6 mt-5 text-bold' ><strong>Hello, I'm Jack</strong></h1>
+                    
+                <h1 class='text-5xl mb-6 mt-5'><strong>A Student
                         Developer</strong></h1>
                 <p class=' mb-10' style='line-height: 1.75em; color: #848484'>Commodo id cupidatat ipsum amet pariatur
                     velit est. Tempor sit esse qui ullamco do commodo esse amet. Deserunt magna aliquip sit id Lorem
                     aliquip minim es</p>
-                <button class="transition bg-black hover:bg-gray-500 text-white font-bold py-3 px-4 rounded-lg">
+                <button onclick='scrollToContact()' class="transition bg-black hover:bg-gray-500 text-white font-bold py-3 px-4 rounded-lg">
                     Contact Me
                 </button>
             </div>
@@ -28,7 +30,7 @@
 
 <section id='about' class='mt-96 sm:pt-72 lg:pt-10 pt-72'>
     <div id='about-default' class='mx-auto max-w-4xl px-5'>
-        <h1 class='text-5xl mb-3 mt-56 md:mt-10' style='line-height: 1.25em;'><strong>About Me</strong></h1>
+        <h1 class='text-5xl mb-3 mt-56 md:mt-10 ml12' style='line-height: 1.25em; '><strong>About Me</strong></h1>
         <p style='line-height: 1.75em; color: #848484'>Enim nulla nulla est esse officia velit eiusmod reprehenderit. Id
             proident laboris et aliqua fugiat. Tempor excepteur dolor mollit cupidatat nisi proident anim proident dolor
             in quis minim. Duis est in irure enim duis dolor consequat nostrud cillum. Qui amet voluptate cillum Lorem
@@ -42,7 +44,7 @@
 
 <section id='portfolio' class=''>
     <div id='portfolio-default' class='mx-auto max-w-4xl px-5'>
-        <h1 class='text-5xl mb-3 mt-56 md:mt-10' style='line-height: 1.25em;'><strong>Portfolio</strong></h1>
+        <h1 class='text-5xl mb-3 mt-56 md:mt-10 ml13' style='line-height: 1.25em;'><strong>Portfolio</strong></h1>
         <p style='color: #848484' class='mb-6'>Lorum ipsum dolor sit amet con consectetur adip
             <span id='link-span'>
                 <a href='/portfolio' id='port-link'
@@ -59,14 +61,14 @@
             <div
                 class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:pl-4 xl:w-1/2">
                 <div
-                    class='transition bg-gray-50 hover:bg-gray-100 h-80 lg:w-96 w-full rounded-3xl p-10 cursor-pointer'>
+                    class='transition bg-gray-50 hover:bg-gray-100 md:h-80 lg:w-96 w-full rounded-3xl p-10 cursor-pointer'>
                     <div class='mb-5'>
                         <img style='height: 80px;' class=rounded-xl src='/images/icon.png'>
                     </div>
                     <h3 class='mb-4 text-black' style='font-size: 24px'><strong>FRCS</strong></h3>
                     <p style='color: #848484' class='mb-2'>Ut ea consequat commodo nulla et. Aliquip laborum aute quis adipisicing
                         do. Id fugiat proident et non </p>
-                        <a href='/' class='transition text-black md:mr-7 hover:text-gray-500'>
+                        <a href='/frcs' class='transition text-black md:mr-7 hover:text-gray-500'>
                             <strong>More Info</strong>
                         </a>
                 </div>
@@ -75,7 +77,7 @@
             <div
                 class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:pl-4 xl:w-1/2">
                 <div
-                    class='transition bg-gray-50 hover:bg-gray-100 h-80 lg:w-96 w-full rounded-3xl p-10 cursor-pointer'>
+                    class='transition bg-gray-50 hover:bg-gray-100 md:h-80 lg:w-96 w-full rounded-3xl p-10 cursor-pointer'>
                     <div class='mb-5'>
                         <img style='height: 80px;' class=rounded-xl src='/images/scsday.png'>
                     </div>
@@ -83,7 +85,7 @@
                     <p style='color: #848484' class='mb-2'>Ut ea consequat commodo nulla et. Aliquip laborum aute quis
                         adipisicing
                         do. Id fugiat proident et non </p>
-                    <a href='/' class='transition text-black md:mr-7 hover:text-gray-500'>
+                    <a href='/scsday' class='transition text-black md:mr-7 hover:text-gray-500'>
                         <strong>More Info</strong>
                     </a>
                 </div>
@@ -94,14 +96,14 @@
             <div
                 class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:px-4 xl:w-1/2">
                 <div
-                    class='transition bg-gray-50 hover:bg-gray-100 h-80 lg:w-96 w-full rounded-3xl p-10 cursor-pointer'>
+                    class='transition bg-gray-50 hover:bg-gray-100 md:h-80 lg:w-96 w-full rounded-3xl p-10 cursor-pointer'>
                     <div class='rounded-xl h-20 w-20 mb-5' style='background-color: #2ab7d6;'>
                         <img class=rounded-xl src='/images/customz.png'>
                     </div>
                     <h3 class='mb-4 text-black' style='font-size: 24px'><strong>Taylors Customz</strong></h3>
                     <p style='color: #848484' class='mb-2'>Ut ea consequat commodo nulla et. Aliquip laborum aute quis adipisicing
                         do. Id fugiat proident et non </p>
-                        <a href='/' class='transition text-black md:mr-7 hover:text-gray-500'>
+                        <a href='/taylors-customz' class='transition text-black md:mr-7 hover:text-gray-500'>
                             <strong>More Info</strong>
                         </a>
                 </div>
@@ -110,15 +112,15 @@
             <div
                 class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:px-4 xl:w-1/2">
                 <div
-                    class='transition bg-gray-50 hover:bg-gray-100 h-80 lg:w-96 w-full rounded-3xl p-10 cursor-pointer'>
+                    class='transition bg-gray-50 hover:bg-gray-100 md:h-80 lg:w-96 w-full rounded-3xl p-10 cursor-pointer'>
                     <div>
                         <img style='height: 80px;' class='rounded-xl mb-5'
-                            src='https://yt3.ggpht.com/ytc/AAUvwniskz1nDYKqQqmRcwyspqXEXQXlgiUia7V0GNFn7g=s900-c-k-c0x00ffffff-no-rj'>
+                            src='images/bee.jpeg'>
                     </div>
-                    <h3 class='mb-4 text-black' style='font-size: 24px'><strong>[Name]</strong></h3>
+                    <h3 class='mb-4 text-black' style='font-size: 24px'><strong>Spelling Bee</strong></h3>
                     <p style='color: #848484' class='mb-2'>Ut ea consequat commodo nulla et. Aliquip laborum aute quis adipisicing
                         do. Id fugiat proident et non </p>
-                        <a href='/' class='transition text-black md:mr-7 hover:text-gray-500'>
+                        <a href='/bee' class='transition text-black md:mr-7 hover:text-gray-500'>
                             <strong>More Info</strong>
                         </a>
                 </div>
@@ -139,8 +141,8 @@
 </center>
 
 <section id='portfolio' class='mb-20'>
-    <div id='portfolio-default' class='mx-auto max-w-4xl px-5'>
-        <h1 class='text-5xl mb-3 mt-56 md:mt-10 ' style='line-height: 1.25em;'><strong>Contact</strong></h1>
+    <div id='portfolio-default' class='mx-auto max-w-4xl px-5 '>
+        <h1 class='text-5xl mb-3 mt-56 md:mt-10 ml14' style='line-height: 1.25em;'><strong>Contact</strong></h1>
         <p style='color: #848484' class='mb-6'>Lorum ipsum dolor sit amet con consectetur adip </p>
 
     </div>
@@ -193,6 +195,13 @@ Illustration from undraw.co by the amazing Katerina Limpitsouni
 
     </div>
 </section>
+<a onclick="scrollToTop()">
+<div  id='btt' class='transition p-3 h-12 hover:w-20 bg-gray-100 hover:bg-gray-200 fixed right-5 bottom-5 rounded-lg cursor-pointer'>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12" />
+      </svg>
+</div>
+</a>
 
 
 
@@ -200,7 +209,7 @@ Illustration from undraw.co by the amazing Katerina Limpitsouni
     window.onload = setDiv();
 
     function setDiv() {
-        console.log(screen.width)
+        $( '#btt-text' ).hide( 500 );
         if (screen.width < 700) {
             var e = document.getElementsByTagName('span')[0];
 
@@ -212,4 +221,68 @@ Illustration from undraw.co by the amazing Katerina Limpitsouni
             document.getElementById('port-link').style.paddingTop = "20px";
         }
     }
+
+    $(document).ready(function(){
+
+        $('#btt').hide();
+
+        $(document).on( 'scroll', function() {
+            if($(document).scrollTop() > 400){
+                $('#btt').fadeIn(500);
+            }
+            else{
+                $('#btt').fadeOut(500);
+            }
+        });
+    })
+
+    var textWrapper = document.querySelector('.ml12');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: false})
+  .add({
+    targets: '.ml12 .letter',
+    translateX: [40,0],
+    translateZ: 0,
+    opacity: [0,1],
+    easing: "easeOutExpo",
+    duration: 1200,
+    delay: (el, i) => 500 + 30 * i
+  })
+
+  var textWrapper = document.querySelector('.ml13');
+  textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+  
+  anime.timeline({loop: false})
+    .add({
+      targets: '.ml13 .letter',
+      translateX: [40,0],
+      translateZ: 0,
+      opacity: [0,1],
+      easing: "easeOutExpo",
+      duration: 1200,
+      delay: (el, i) => 500 + 30 * i
+    })
+
+    
+    var textWrapper = document.querySelector('.ml14');
+    textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    
+    anime.timeline({loop: false})
+      .add({
+        targets: '.ml14 .letter',
+        translateX: [40,0],
+        translateZ: 0,
+        opacity: [0,1],
+        easing: "easeOutExpo",
+        duration: 1200,
+        delay: (el, i) => 500 + 30 * i
+      })
+
+      
+
+
+
+
+
 </script>

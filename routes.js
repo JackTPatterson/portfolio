@@ -15,4 +15,16 @@ router.get('/frcs', function(req, res){
     res.render("projects/frcs")
 })
 
+router.get('/scsday', function(req, res){
+    res.render("projects/scsday")
+})
+
+router.get('/taylors-customz', function(req, res){
+    res.render("projects/customz")
+})
+
+router.get('/bee', function(req, res){
+    res.render("projects/bee")
+})
+
 module.exports = router;

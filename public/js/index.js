@@ -4,21 +4,10 @@ $(document).ready(function () {
 
     $('#year').text(" " + year + " ");
 
-    var scroller = setInterval(scroll, 5);
+   
 
     $('#top-btn').hide();
 
-
-    function scroll() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'auto'
-        });
-    }
-
-    setTimeout(function () {
-        clearInterval(scroller);
-    }, 500)
 
     let height = $(window).height();
 
@@ -42,7 +31,13 @@ jQuery.easing.def = 'easeInOutQuad';
 
 function scrollToContact() {
     $('html, body').animate({
-        scrollTop: $(document).height() - $(window).height() - 100
+        scrollTop: $(document).height() - $(window).height()
+    }, 1300);
+}
+
+function scrollToTop() {
+    $('html, body').animate({
+        scrollTop: 0
     }, 1300);
 }
 
