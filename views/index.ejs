@@ -1,11 +1,10 @@
 <%- include('./partials/_header.ejs'); %>
-<script>
-    AOS.init();
-</script>
 
 
-<section class='lg:mt-52 mt-10 mb-24'>
-    <div id='default' class='px-5 mx-auto max-w-4xl'>
+
+
+<section class='lg:mt-52 mt-10 mb-24' data-aos="smooth" data-aos-delay="0" data-aos-easing="ease-in-out-cubic">
+    <div id='default' class='px-5 mx-auto max-w-4xl' >
         <div id='wrapper' class='lg:flex lg:justify-center' style='height: 1.8em; justify-content: space-between;'>
             <div id='split-1' class='mr-5 max-w-xl'>
                 <h1 class='text-5xl mb-6 mt-5 text-bold' ><strong>Hello, I'm Jack</strong></h1>
@@ -15,12 +14,14 @@
                 <p class=' mb-10' style='line-height: 1.75em; color: #848484'>Commodo id cupidatat ipsum amet pariatur
                     velit est. Tempor sit esse qui ullamco do commodo esse amet. Deserunt magna aliquip sit id Lorem
                     aliquip minim es</p>
-                <button onclick='scrollToContact()' class="transition bg-black hover:bg-gray-500 text-white font-bold py-3 px-4 rounded-lg">
-                    Contact Me
+                <button onclick='scrollToContact()' class="link link transition flex bg-black text-white font-bold py-3 px-4 rounded-lg">
+                    Contact Me <div class='link transition ml-2' id='btn-arrow'><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg></div>
                 </button>
             </div>
             <div id='split-2' class='my-auto lg:mt-14'>
-                <img class='w-72 rounded-2xl inline-block mt-10 lg:mt-0'
+                <img class='w-72 rounded-2xl inline-block mt-10 lg:mt-0' 
                     src='https://yt3.ggpht.com/ytc/AAUvwniskz1nDYKqQqmRcwyspqXEXQXlgiUia7V0GNFn7g=s900-c-k-c0x00ffffff-no-rj'>
             </div>
         </div>
@@ -30,7 +31,7 @@
 
 <section id='about' class='mt-96 sm:pt-72 lg:pt-10 pt-72'>
     <div id='about-default' class='mx-auto max-w-4xl px-5'>
-        <h1 class='text-5xl mb-3 mt-56 md:mt-10 ml12' style='line-height: 1.25em; '><strong>About Me</strong></h1>
+        <h1  class='text-5xl mb-3 mt-56 md:mt-10 ml12' style='line-height: 1.25em;'><strong class='js-scroll'>About Me</strong></h1>
         <p style='line-height: 1.75em; color: #848484'>Enim nulla nulla est esse officia velit eiusmod reprehenderit. Id
             proident laboris et aliqua fugiat. Tempor excepteur dolor mollit cupidatat nisi proident anim proident dolor
             in quis minim. Duis est in irure enim duis dolor consequat nostrud cillum. Qui amet voluptate cillum Lorem
@@ -48,9 +49,7 @@
         <p style='color: #848484' class='mb-6'>Lorum ipsum dolor sit amet con consectetur adip
             <span id='link-span'>
                 <a href='/portfolio' id='port-link'
-                    class='transition mb-6 lg:float-right text-black md:mr-7 hover:text-gray-500 mt-5 md:mt-0'>
-
-
+                    class='link link transition mb-6 md:float-right text-black md:mr-7 mt-5 md:mt-0'>
                     <strong>View Full Portfolio</strong>
                 </a>
             </span>
@@ -61,14 +60,14 @@
             <div
                 class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:pl-4 xl:w-1/2">
                 <div
-                    class='transition bg-gray-50 hover:bg-gray-100 md:h-80 lg:w-96 w-full rounded-3xl p-10 cursor-pointer'>
+                    class='transition bg-gray-50 hover:bg-gray-100 md:h-80 lg:w-96 w-full rounded-3xl p-10 '>
                     <div class='mb-5'>
                         <img style='height: 80px;' class=rounded-xl src='/images/icon.png'>
                     </div>
                     <h3 class='mb-4 text-black' style='font-size: 24px'><strong>FRCS</strong></h3>
                     <p style='color: #848484' class='mb-2'>Ut ea consequat commodo nulla et. Aliquip laborum aute quis adipisicing
                         do. Id fugiat proident et non </p>
-                        <a href='/frcs' class='transition text-black md:mr-7 hover:text-gray-500'>
+                        <a href='/frcs' class='link link transition text-black md:mr-7 '>
                             <strong>More Info</strong>
                         </a>
                 </div>
@@ -77,7 +76,7 @@
             <div
                 class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:pl-4 xl:w-1/2">
                 <div
-                    class='transition bg-gray-50 hover:bg-gray-100 md:h-80 lg:w-96 w-full rounded-3xl p-10 cursor-pointer'>
+                    class='transition bg-gray-50 hover:bg-gray-100 md:h-80 lg:w-96 w-full rounded-3xl p-10 '>
                     <div class='mb-5'>
                         <img style='height: 80px;' class=rounded-xl src='/images/scsday.png'>
                     </div>
@@ -85,7 +84,7 @@
                     <p style='color: #848484' class='mb-2'>Ut ea consequat commodo nulla et. Aliquip laborum aute quis
                         adipisicing
                         do. Id fugiat proident et non </p>
-                    <a href='/scsday' class='transition text-black md:mr-7 hover:text-gray-500'>
+                    <a href='/scsday' class='link transition text-black md:mr-7 '>
                         <strong>More Info</strong>
                     </a>
                 </div>
@@ -96,14 +95,14 @@
             <div
                 class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:px-4 xl:w-1/2">
                 <div
-                    class='transition bg-gray-50 hover:bg-gray-100 md:h-80 lg:w-96 w-full rounded-3xl p-10 cursor-pointer'>
+                    class='transition bg-gray-50 hover:bg-gray-100 md:h-80 lg:w-96 w-full rounded-3xl p-10 '>
                     <div class='rounded-xl h-20 w-20 mb-5' style='background-color: #2ab7d6;'>
                         <img class=rounded-xl src='/images/customz.png'>
                     </div>
                     <h3 class='mb-4 text-black' style='font-size: 24px'><strong>Taylors Customz</strong></h3>
                     <p style='color: #848484' class='mb-2'>Ut ea consequat commodo nulla et. Aliquip laborum aute quis adipisicing
                         do. Id fugiat proident et non </p>
-                        <a href='/taylors-customz' class='transition text-black md:mr-7 hover:text-gray-500'>
+                        <a href='/taylors-customz' class='link transition text-black md:mr-7 '>
                             <strong>More Info</strong>
                         </a>
                 </div>
@@ -112,15 +111,15 @@
             <div
                 class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:px-4 xl:w-1/2">
                 <div
-                    class='transition bg-gray-50 hover:bg-gray-100 md:h-80 lg:w-96 w-full rounded-3xl p-10 cursor-pointer'>
+                    class='transition bg-gray-50 hover:bg-gray-100 md:h-80 lg:w-96 w-full rounded-3xl p-10'>
                     <div>
                         <img style='height: 80px;' class='rounded-xl mb-5'
                             src='images/bee.jpeg'>
                     </div>
-                    <h3 class='mb-4 text-black' style='font-size: 24px'><strong>Spelling Bee</strong></h3>
+                    <h3 class='mb-4 text-black' style='font-size: 24px'><strong>APCSP</strong></h3>
                     <p style='color: #848484' class='mb-2'>Ut ea consequat commodo nulla et. Aliquip laborum aute quis adipisicing
                         do. Id fugiat proident et non </p>
-                        <a href='/bee' class='transition text-black md:mr-7 hover:text-gray-500'>
+                        <a href='/bee' class='link transition text-black md:mr-7 '>
                             <strong>More Info</strong>
                         </a>
                 </div>
@@ -128,7 +127,7 @@
         </div>
         <!-- <div class='float-righ mr-7 mt-2'>
 
-            <button class="transition bg-black hover:bg-gray-700 text-white font-bold py-3 max-w-4xl px-4 rounded-lg float-right">
+            <button class="link transition bg-black hover:bg-gray-700 text-white font-bold py-3 max-w-4xl px-4 rounded-lg float-right">
                 View Full Portfolio
               </button>
         </div> -->
@@ -136,6 +135,35 @@
 </section>
 
 
+<center>
+    <hr class='md:max-w-4xl md:my-24 mt-24 w-5/6 border-gray-200'>
+</center>
+<section>
+    <div id='portfolio-default' class='mx-auto max-w-4xl px-5'>
+        <h1 class='text-5xl mb-3 mt-56 md:mt-10 ml13' style='line-height: 1.25em;'><strong>Testimonials</strong></h1>
+        <p style='color: #848484' class='mb-6'>Here's what people are saying about my work
+           
+        </p>
+    
+<div class="mx-auto  xl:px-0 container pt-10">
+    <div class="text-color f-f-l">
+        <h1 class='text-xl'><strong>Aman Mistry</strong></h1>
+        <h1 class='mb-2' style='color: #848484'>Peerlab Tutoring Founder</h1>
+        <h1 class="text-xl lg:text-4xl tracking-tighter leading-relaxed lg:leading-snug f-f-l font-black">
+           "Jack dedicates countless hours developing useful projects and his hard work is shown in the results"
+        </h1>
+
+        <h1 class='text-xl mt-10'><strong>Taylor Eggert</strong></h1>
+        <h1 class='mb-2' style='color: #848484'>Taylors Customz Founder</h1>
+        <h1 class="text-xl lg:text-4xl tracking-tighter leading-relaxed lg:leading-snug f-f-l font-black">
+            "Jack made me a flawless website for my small business which helped me expand to my consumers. Without him I would not be able to have the professional online database and extended outreach that I continue to use everyday."
+        </h1>
+        
+        
+    </div>
+</div>
+</div>
+</section>
 <center>
     <hr class='md:max-w-4xl md:my-24 mt-24 w-5/6 border-gray-200'>
 </center>
@@ -147,47 +175,41 @@
 
     </div>
     <div>
-        <!-- a lot of the lines are just svg text, actual html is simple 
-A sample contact us page form written with tailwind css
-Illustration from undraw.co by the amazing Katerina Limpitsouni
-
-
--->
+<section>
 
 
         <div class=" max-w-4xl mx-auto px-5">
             <div class='flex'>
-
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.3"
                         d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
                 </svg>
-
-                <p class='ml-3'>jackp@jpdigital.info</p>
+                <p class='ml-3'><strong>jackp@jpdigital.info</strong></p>
             </div>
             <div class="">
                 <div>
                     <p class="text-sm text-gray-600 font-bold text-left mt-4">Full Name</p>
-                    <input
+                    <input id='form-name'
                         class="w-full bg-gray-100 text-black mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                         type="text" placeholder="">
                 </div>
                 <div class="mt-8">
                     <p class="text-sm text-gray-600 font-bold text-left">Email</p>
-                    <input
+                    <input id='form-email'
                         class="w-full bg-gray-100 text-black mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                        type="text">
+                        type="email">
                 </div>
                 <div class="mt-8">
                     <p class="text-sm text-gray-600 font-bold text-left">Message</p>
-                    <textarea
+                    <textarea id='form-message'
                         class="w-full h-32 bg-gray-100 text-black mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
                 </div>
                 <div class="mt-8">
-                    <button
-                        class="transition text-sm font-bold tracking-wide bg-black hover:bg-gray-500 text-white p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
+                    <button onclick="addData()"
+                        class="link transition text-sm font-bold tracking-wide bg-black text-white p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
                         Send Message
+                       
                     </button>
                 </div>
             </div>
@@ -195,16 +217,25 @@ Illustration from undraw.co by the amazing Katerina Limpitsouni
 
     </div>
 </section>
+
+
+
+
+
 <a onclick="scrollToTop()">
-<div  id='btt' class='transition p-3 h-12 hover:w-20 bg-gray-100 hover:bg-gray-200 fixed right-5 bottom-5 rounded-lg cursor-pointer'>
+<div  id='btt' class='link transition p-3 h-12 hover:w-20 bg-gray-100 hover:bg-gray-200 fixed right-5 bottom-5 rounded-lg '>
     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12" />
       </svg>
 </div>
 </a>
 
+<div class="px-4 py-3 text-white bg-black rounded-lg" role="alert" id='alert'>
+    <p>Message Sent</p>
+  </div>
 
 
+ 
 <script>
     window.onload = setDiv();
 
@@ -224,6 +255,10 @@ Illustration from undraw.co by the amazing Katerina Limpitsouni
 
     $(document).ready(function(){
 
+        $('#alert').css({"opacity": "0"});
+        $('#alert').css({"top": "-20px"});
+
+
         $('#btt').hide();
 
         $(document).on( 'scroll', function() {
@@ -236,7 +271,7 @@ Illustration from undraw.co by the amazing Katerina Limpitsouni
         });
     })
 
-    var textWrapper = document.querySelector('.ml12');
+var textWrapper = document.querySelector('.ml12');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
 anime.timeline({loop: false})
@@ -279,10 +314,35 @@ anime.timeline({loop: false})
         delay: (el, i) => 500 + 30 * i
       })
 
-      
-
-
-
-
-
+    
 </script>
+
+<script>
+    AOS.init({
+        // Global settings:
+        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+        initClassName: 'aos-init', // class applied after initialization
+        animatedClassName: 'aos-animate', // class applied on animation
+        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+        
+      
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 100, // offset (in px) from the original trigger point
+        duration: 400, // values from 0 to 3000, with step 50ms
+        once: true, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+        anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+      
+      });
+      history.scrollRestoration = "manual";
+    $(window).on('beforeunload', function(){
+        $(window).scrollTop(0);
+    });
+
+
+    
+    </script>

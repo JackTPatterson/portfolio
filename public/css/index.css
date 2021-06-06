@@ -1,10 +1,11 @@
 body {
 
-    font-family: "Montserrat" !important;
+    font-family: "Sora" !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
+    background-color: #fff;
 }
+
 
   
 /* === AOS ANIMATIONS === */
@@ -25,8 +26,11 @@ animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
   .ml12 {
     font-weight: bold;
+
+
   }
 
+  
   .ml13 {
     font-weight: bold;
   }
@@ -50,4 +54,30 @@ animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     display: inline-block;
     line-height: 1em;
   }
+
+
+
+
+#alert{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 999;
+    transition: transform 0.2s;
+  }
+
+  html,
+* {
+  cursor: none;
   
+}

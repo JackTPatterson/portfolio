@@ -13,13 +13,30 @@ var firebaseConfig = {
 
 function addData() {
     db.collection("responses").add({ 
-            first_name: $('#grid-first-name').val(),
-            last_name: $('#grid-last-name').val(),
-            email: $('#email').val(),
-            message: $('#message').val()
+            name: $('#form-name').val(),
+            email: $('#form-email').val(),
+            message: $('#form-message').val()
 
         })
         .catch(function (error) {
             console.error("Error adding document: ", error);
         });
+        showAlert()
 }
+
+function showAlert(){
+    $( "#alert" ).animate({
+        "opacity": "1",
+        "top": "12px"
+       }, 300)
+   
+       
+      
+
+    setTimeout(() => {  
+        $( "#alert" ).animate({
+            "opacity": "0",
+            "top": "-20px"
+           }, 300)
+}, 3000)
+  }
