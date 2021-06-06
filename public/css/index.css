@@ -79,5 +79,17 @@ animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   html,
 * {
   cursor: none;
-  
+
+}
+
+.link{
+    pointer-events: none;
+}
+
+.error{
+    margin-top: calc(20% - 150.5px)
+}
+
+#error-text{
+    font-size: 150px;
 }
