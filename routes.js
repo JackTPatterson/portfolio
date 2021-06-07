@@ -27,4 +27,8 @@ router.get('/bee', function(req, res){
     res.render("projects/bee")
 })
 
+router.get('/peerlab', function(req, res){
+    res.render("projects/peerlab")
+})
+
 module.exports = router;

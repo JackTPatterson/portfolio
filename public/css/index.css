@@ -3,7 +3,13 @@ body {
     font-family: "Sora" !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #fff;
+}
+
+
+.anim{
+  transition-property: transform;
+  	-webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  	animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 
@@ -22,6 +28,19 @@ body {
 	-webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   }
+
+  @keyframes slide-top {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+}
+
 
 
   .ml12 {
@@ -64,32 +83,7 @@ animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     transform: translateX(-50%);
 }
 
-.cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #f5f5f5;
-    pointer-events: none;
-    mix-blend-mode: difference;
-    z-index: 999;
-    transition: transform 0.2s;
-  }
 
-  html,
-* {
-  cursor: none;
 
-}
 
-.link{
-    pointer-events: none;
-}
 
-.error{
-    margin-top: calc(20% - 150.5px)
-}
-
-#error-text{
-    font-size: 150px;
-}

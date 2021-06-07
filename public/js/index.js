@@ -1,60 +1,10 @@
-$(document).ready(function() {
-    var cursor = $(".cursor");
 
-    $(window).mousemove(function(e) {
-        cursor.css({
-            top: e.clientY - cursor.height() / 2,
-            left: e.clientX - cursor.width() / 2
-        });
-    });
-
-    $(window)
-        .mouseleave(function() {
-            cursor.css({
-                opacity: "0"
-            });
-        })
-        .mouseenter(function() {
-            cursor.css({
-                opacity: "1"
-            });
-        });
-
-    $(".link")
-        .mouseenter(function() {
-            cursor.css({
-                transform: "scale(3.2)"
-            });
-        })
-        .mouseleave(function() {
-            cursor.css({
-                transform: "scale(1)"
-            });
-        });
-
-    $(window)
-        .mousedown(function() {
-            cursor.css({
-                transform: "scale(.2)"
-            });
-        })
-        .mouseup(function() {
-            cursor.css({
-                transform: "scale(1)"
-            });
-        });
-});
-
-
+    
 $(document).ready(function () {
-
-    year = new Date().getFullYear() - 2003;
-
-    $('#year').text(" " + year + " ");
 
     var scroller = setInterval(scroll, 5);
 
-    $('#top-btn').hide();
+
 
 
     function scroll() {
@@ -70,19 +20,11 @@ $(document).ready(function () {
 
     let height = $(window).height();
 
-    var el = $('#main-btn'); //this would just be your selector
+    var el = $('#default'); //this would just be your selector
     var bottom = el.position().top + el.outerHeight(true);
 
-
-
-    $('#work').css({
-        "margin-top": height - bottom
-    });
-    $('#skills').css({
-        "margin-top": height - bottom
-    });
     $('#about').css({
-        "margin-top": height - bottom
+        "margin-top": height - bottom - 190
     });
 });
 
@@ -90,7 +32,7 @@ jQuery.easing.def = 'easeInOutQuad';
 
 function scrollToContact() {
     $('html, body').animate({
-        scrollTop: $(document).height() - $(window).height()
+        scrollTop: $(document).height() - $(window).height() - 100
     }, 1300);
 }
 
