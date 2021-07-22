@@ -1,5 +1,3 @@
-
-    
 $(document).ready(function () {
 
     var scroller = setInterval(scroll, 5);
@@ -7,12 +5,58 @@ $(document).ready(function () {
 
 
 
-    function scroll() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'auto'
-        });
+
+
+    var wel = document.getElementById('welcome-lnk2')
+    var abt = document.getElementById('abt-lnk2')
+    var port = document.getElementById('port-lnk2')
+    var cont = document.getElementById('contact-lnk2')
+    var test = document.getElementById('test-lnk2')
+
+
+
+
+    wel.onclick = function (){
+            $('html, body').animate({
+                scrollTop: window.pageYOffset + document.getElementById('main').offsetTop - 40
+            }, 1300);
+        }
+
+    
+    abt.onclick = function (){
+            $('html, body').animate({
+                scrollTop: window.pageYOffset + document.getElementById('about').offsetTop + 30
+            }, 1300);
     }
+    port.onclick = function (){
+
+
+            $('html, body').animate({
+                scrollTop: window.pageYOffset + document.getElementById('portfolio').offsetTop - 40
+            }, 1300);
+        
+    }
+    cont.onclick = function (){
+
+
+            $('html, body').animate({
+                scrollTop: window.pageYOffset + document.getElementById('contact').offsetTop - 40
+            }, 1300);
+        
+    }
+    test.onclick = function (){
+
+
+            $('html, body').animate({
+                scrollTop: 2270
+            }, 1300);
+        
+    
+    }
+
+   
+
+        
 
     setTimeout(function () {
         clearInterval(scroller);
@@ -24,9 +68,12 @@ $(document).ready(function () {
     var bottom = el.position().top + el.outerHeight(true);
 
     $('#about').css({
-        "margin-top": height - bottom - 190
+        "margin-top": height - bottom - 500
     });
 });
+
+
+
 
 jQuery.easing.def = 'easeInOutQuad';
 

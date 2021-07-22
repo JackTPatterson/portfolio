@@ -1,12 +1,14 @@
 <%- include('../partials/_header.ejs'); %>
 
 
-<section class='sm:mt-24 mt-10 md:mb-48 mb-32'>
+    <div data-aos="smooth" data-aos-delay="0" data-aos-easing="ease-in-out-cubic">
+<section class='sm:mt-36 mt-20 md:mb-48 mb-32'>
     <div id='default' class='px-5 mx-auto max-w-4xl'>
         <div id='wrapper' class='lg:flex lg:justify-center' style='height: 1.8em; justify-content: space-between;'>
             <div id='split-1' class='mr-5 max-w-xl'>
-                <div class='mb-5'>
-                    <img style='height: 80px;' class=rounded-xl src='/images/customz.png'>
+               
+                <div class='rounded-xl h-20 w-20 mb-5' style='background-color: #2ab7d6;'>
+                    <img class=rounded-xl src='/images/customz.png'>
                 </div>
                 <h1 class='text-5xl mb-6 mt-5' style='line-height: 1.25em;'><strong>Taylors Customz</strong></h1>
                 <p class=' mb-10' style='line-height: 1.75em; color: #848484'>Commodo id cupidatat ipsum amet pariatur
@@ -16,18 +18,96 @@
             </div>
 
         </div>
-        <div class='mt-96 sm:mt-80  mx-auto max-w-4xl'>
+        <div class='mt-80 mx-auto max-w-4xl relative'>
             <img style='width: 100%;' class='shadow-2xl md:rounded-3xl rounded-2xl' src='images/customz-ss.png'>
         </div>
     </div>
-
 </section>
-<section id='about' class=''>
-    <div id='about-default' class='mx-auto max-w-4xl px-5'>
-        <h1 class='text-5xl mb-3 md:mt-10' style='line-height: 1.25em;'><strong>What Is Taylors Customz</strong></h1>
-        <p style='line-height: 1.75em; color: #848484'>Enim nulla nulla est esse officia velit eiusmod reprehenderit. Id
-            proident laboris et aliqua fugiat. Tempor excepteur dolor mollit cupidatat nisi proident anim proident dolor
-            in quis minim. Duis est in irure enim duis dolor consequat nostrud cillum. Qui amet voluptate cillum Lorem
-            magna ex ex incididunt nulla sint. Ad esse exercitation proident ea consequat laborum ullamco quis.</p>
+<section >
+    <div id='portfolio-default' class='mx-auto max-w-4xl px-5'>
+        <h1 class='text-5xl mb-3 mt-56 md:mt-10 ml13' style='line-height: 1.25em;'><strong>Stack</strong>
+        </h1>
+        
+        <div class="flex flex-wrap -mx-4 overflow-hidden">
+
+            <div class="my-4 px-4 w-full overflow-hidden sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2">
+                
+                <div class='transition bg-gray-50 hover:bg-gray-100 h-56 w-full rounded-3xl p-10'>
+                   
+                    <h3 class='mb-4 text-black' style='font-size: 24px'><strong>Frontend</strong></h3>
+                    <ul class='mb-2'>
+                        <li>
+                            <p style='color: #848484' >HTML</p>
+                        </li>
+                        <li>
+                            <p style='color: #848484'>CSS</p>
+                        </li>
+                        <li>
+                            <p style='color: #848484'>Bootstrap</p>
+                        </li>
+                        <li>
+                            <p style='color: #848484'>JS</p>
+                        </li>
+                    </ul>
+                  
+                    
+                </div>
+            
+            </div>
+          
+            <div class="my-4 px-4 w-full overflow-hidden sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2">
+                <div class='transition bg-gray-50 hover:bg-gray-100 h-56 w-full rounded-3xl p-10'>
+                   
+                    <h3 class='mb-4 text-black' style='font-size: 24px'><strong>Backend</strong></h3>
+                    <ul class='mb-2'>
+                        <li>
+                            <p style='color: #848484' >Django</p>
+                        </li>
+                        <li>
+                            <p style='color: #848484'>SQLite</p>
+                        </li>
+                        <li>
+                            <p style='color: #848484'>JS</p>
+                        </li>
+                    </ul>
+                  
+                    
+                </div>
+            
+            </div>
+            </div>
+          
+          </div>
+
+
+           
+        </div>
     </div>
 </section>
+
+</div>
+</div>
+
+<script>
+
+AOS.init({
+    // Global settings:
+    startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+    initClassName: 'aos-init', // class applied after initialization
+    animatedClassName: 'aos-animate', // class applied on animation
+    useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+    disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+    debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+    throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+
+    // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+    delay: 0, // values from 0 to 3000, with step 50ms
+    duration: 400, // values from 0 to 3000, with step 50ms
+    easing: 'ease', // default easing for AOS animations
+    once: false, // whether animation should happen only once - while scrolling down
+    mirror: false, // whether elements should animate out while scrolling past them
+    anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+
+});
+</script>

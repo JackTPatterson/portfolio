@@ -1,6 +1,4 @@
-require('dotenv').config();
-
-const key = process.env.KEY
+const key = ''
 
 const projectID = 'portfolio-27f5a'
 const doc = 'responses/NsOokbKQkakjY5m2eQvl'

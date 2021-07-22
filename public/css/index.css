@@ -1,89 +1,223 @@
 body {
 
-    font-family: "Sora" !important;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: "Sora" !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
-.anim{
+.anim {
   transition-property: transform;
-  	-webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  	animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+#abt-lnk {
+  margin-right: 10px;
+  animation: pull-left 1s ease;
+  animation-fill-mode: forwards;
+  animation-delay: .1s;
+  opacity: 0;
+}
+
+#welcome-lnk {
+  margin-right: 10px;
+  animation: pull-left 1s ease;
+  animation-fill-mode: forwards;
+  animation-delay: .2s;
+  opacity: 0;
+}
+
+#contact-lnk {
+  margin-left: 10px;
+  animation: pull-right 1s ease;
+  animation-fill-mode: forwards;
+  animation-delay: .2s;
+  opacity: 0;
+}
+
+#test-lnk {
+  margin-left: 10px;
+  animation: pull-right 1s ease;
+  animation-fill-mode: forwards;
+  animation-delay: .1s;
+  opacity: 0;
+}
+
+#port-lnk {
+
+  animation: op 1s ease;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 
-  
+@keyframes pull-left {
+  0% {
+    margin-right: 10px;
+    opacity: 0;
+  }
+
+  100% {
+
+    opacity: 1;
+    margin-right: 50px;
+
+  }
+}
+
+@keyframes pull-right {
+  0% {
+    margin-left: 10px;
+    opacity: 0;
+  }
+
+  100% {
+
+    opacity: 1;
+    margin-left: 50px;
+
+  }
+}
+
+@keyframes op {
+  0% {
+    
+    opacity: 0;
+  }
+
+  100% {
+
+    opacity: 1;
+    
+
+  }
+}
+
+
 /* === AOS ANIMATIONS === */
 
 [data-aos="smooth"] {
-	opacity: 0;
-	transition-property: transform;
-  }
+  opacity: 0;
+  transition-property: transform;
+}
 
-  
+
 
 [data-aos="smooth"].aos-animate {
-	opacity: 1;
-	-webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  opacity: 1;
+  -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* -------------------------------- */
+/* 
+
+
+
+/* -------------------------------- */
+
+
+@keyframes slide-top {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
   }
 
-  @keyframes slide-top {
-    0% {
-        transform: translateY(0);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(-30px);
-        opacity: 1;
-    }
+  100% {
+    transform: translateY(-30px);
+    opacity: 1;
+  }
 }
 
 
 
-  .ml12 {
-    font-weight: bold;
+.ml12 {
+  font-weight: bold;
 
 
-  }
-
-  
-  .ml13 {
-    font-weight: bold;
-  }
-
-  .ml14 {
-    font-weight: bold;
-  }
-  
-  .ml12 .letter {
-    display: inline-block;
-    line-height: 1em;
-  }
-  
-  .ml13 .letter {
-    display: inline-block;
-    line-height: 1em;
-  }
-  
-
-  .ml14 .letter {
-    display: inline-block;
-    line-height: 1em;
-  }
+}
 
 
+.ml13 {
+  font-weight: bold;
+}
+
+.ml14 {
+  font-weight: bold;
+}
+
+.ml15 {
+  font-weight: bold;
+}
+
+.ml12 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.ml13 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
 
 
-#alert{
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
+.ml14 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.ml15 .letter {
+  display: inline-block;
+  line-height: 1em;
 }
 
 
 
 
+#alert {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
+#error-text {
+  font-size: 150px;
+}
+
+
+.error {
+  margin-top: calc(20% - 100px);
+}
+
+#welcome-lnk, #abt-lnk, #contact-lnk, #text-lnk, #port-lnk, #test-lnk {
+  transition: all 0.2s;
+}
+
+#welcome-lnk:hover, #abt-lnk:hover, #contact-lnk:hover, #text-lnk:hover, #port-lnk:hover, #test-lnk:hover {
+  transition: all 0.2s;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+
+#welcome-lnk:after, #abt-lnk:after, #contact-lnk:after, #text-lnk:after, #port-lnk:after, #test-lnk:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  height: 2px;
+  width: 0;
+  background: transparent;
+}
+
+#welcome-lnk:after, #abt-lnk:after, #contact-lnk:after, #text-lnk:after, #port-lnk:after, #test-lnk:after {
+  transition: width .2s ease, background-color .2s ease, left .2s ease;
+}
+
+#welcome-lnk:hover:after, #abt-lnk:hover:after, #contact-lnk:hover:after, #text-lnk:hover:after, #port-lnk:hover:after, #test-lnk:hover:after {
+  width: 100%;
+  left: 0;
+  background: #000;
+}
