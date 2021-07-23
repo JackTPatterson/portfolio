@@ -1,6 +1,6 @@
 <%- include('./partials/_header.ejs'); %>
 
-<header class='flex justify-center mt-7 invisible md:visible'>
+<header class='flex justify-center mt-10 invisible md:visible'>
    
     <ul class="flex">
         <li id='welcome-lnk'><a id='welcome-lnk2'>Welcome</a></li>
@@ -40,8 +40,8 @@
                     pariatur
                     velit est. Tempor sit esse qui ullamco do commodo esse amet. Deserunt magna aliquip sit id Lorem
                     aliquip minim es</p>
-                <button onclick='scrollToContact()'
-                    class="mb-10 lg:mb-0 anim transition flex bg-black text-white font-bold py-3 px-4 rounded-lg">
+                <button onclick='scrollToContact()' id='main-btn'
+                    class="mb-10 cursor-pointer lg:mb-0 anim transition flex bg-black text-white font-bold py-3 px-4 rounded-lg">
                     Contact Me <div class=' transition ml-2' id='btn-arrow'><svg xmlns="http://www.w3.org/2000/svg"
                             class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -89,11 +89,11 @@
 <section id='portfolio' class='' data-aos="smooth" data-aos-delay="0" data-aos-easing="ease-in-out-cubic">
     <div id='portfolio-default' class='mx-auto max-w-4xl px-5'>
         <h1 class='text-5xl mb-3 mt-56 md:mt-10 ml13' style='line-height: 1.25em;'><strong>Portfolio</strong></h1>
-        <p style='color: #848484' class='mb-6'>Lorum ipsum dolor sit amet con consectetur adip
+        <p style='color: #848484' class='mb-6'>Here's some of the things I have been working on
             <span id='link-span'>
                 <a href='/portfolio' id='port-link'
                     class='link transition mb-6 text-black md:mr-7 md:mt-0'>
-                    <strong>View Full Portfolio</strong>
+                    <strong class='text-black md:float-right'>View Full Portfolio</strong>
                 </a>
             </span>
         </p>
@@ -101,15 +101,13 @@
         <div class="flex flex-wrap -mx-3 overflow-hidden sm:-mx-3 md:-mx-3 lg:-mx-3 xl:-mx-3">
 
             <div
-                class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:pl-4 xl:w-1/2">
-                <div class='transition bg-gray-50 hover:bg-gray-100 md:h-80 lg:w-96 w-full rounded-3xl p-10 '>
+                class="my-3  w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4  xl:w-1/2">
+                <div class='transition bg-gray-50 hover:bg-gray-100 md:h-80 w-full rounded-3xl p-10 '>
                     <div class='mb-5'>
                         <img style='height: 80px;' class=rounded-xl src='/images/icon.png'>
                     </div>
                     <h3 class='mb-4 text-black' style='font-size: 24px'><strong>FRCS</strong></h3>
-                    <p style='color: #848484' class='mb-2'>Ut ea consequat commodo nulla et. Aliquip laborum aute
-                        quis adipisicing
-                        do. Id fugiat proident et non </p>
+                    <p style='color: #848484' class='mb-2'>FRCS is a international crowed sourced platform created to gather data for the FIRST Robotics Competition</p>
                     <a href='/frcs' class='link link transition text-black md:mr-7 '>
                         <strong>More Info</strong>
                     </a>
@@ -118,15 +116,12 @@
 
             <div
                 class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:pl-4 xl:w-1/2">
-                <div class='transition bg-gray-50 hover:bg-gray-100 md:h-80 lg:w-96 w-full rounded-3xl p-10 '>
+                <div class='transition bg-gray-50 hover:bg-gray-100 md:h-80 w-full rounded-3xl p-10 '>
                     <div class='mb-5'>
                         <img style='height: 80px;' class=rounded-xl src='/images/scsday.png'>
                     </div>
                     <h3 class='mb-4 text-black' style='font-size: 24px'><strong>SCSDay</strong></h3>
-                    <p style='color: #848484' class='mb-2'>Ut ea consequat commodo nulla et. Aliquip laborum aute
-                        quis
-                        adipisicing
-                        do. Id fugiat proident et non </p>
+                    <p style='color: #848484' class='mb-2'>SCSDay is a quick way to check the current day based on an A / B day schedule</p>
                     <a href='/scsday' class='link transition text-black md:mr-7 '>
                         <strong>More Info</strong>
                     </a>
@@ -136,9 +131,28 @@
             </div>
 
             <div
-                class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:px-4 xl:w-1/2">
-                <div class='transition bg-gray-50 hover:bg-gray-100 md:h-80 lg:w-96 w-full rounded-3xl p-10 '>
-                    <div class='rounded-xl h-20 w-20 mb-5' style='background-color: #2ab7d6;'>
+                class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:pl-4 xl:w-1/2">
+                <div class='transition bg-gray-50 hover:bg-gray-100 md:h-80 w-full rounded-3xl p-10 '>
+                    <div>
+                        <img style='height: 80px;' class='rounded-xl mb-5'
+                            src='https://static.wixstatic.com/media/5cf9e9_bff0b9368f6e4cd58f76ab3b438b1ba5~mv2.png/v1/fill/w_80,h_80,al_c,q_85,usm_0.66_1.00_0.01/Logo5.webp'>
+                    </div>
+                    
+                    <h3 class='mb-4 text-black' style='font-size: 24px'><strong>Peerlab Tutoring</strong></h3>
+                    <p style='color: #848484' class='mb-2'>PeerLab Tutoring is a student-based FREE tutoring
+                        nonprofit based in Smithtown, NY. </p>
+                    <a href='/peerlab' class='link transition text-black md:mr-7 hover:text-gray-500'>
+                        <strong>More Info</strong>
+                    </a>
+                </div>
+
+
+            </div>
+
+            <div
+                class="my-3 pb-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:pl-4 xl:w-1/2">
+                <div class='transition bg-gray-50 hover:bg-gray-100 md:h-80 w-full rounded-3xl p-10 '>
+                    <div class='rounded-xl h-20 w-20 mb-4' style='background-color: #2ab7d6;'>
                         <img class=rounded-xl src='/images/customz.png'>
                     </div>
                     <h3 class='mb-4 text-black' style='font-size: 24px'><strong>Taylors Customz</strong></h3>
@@ -151,22 +165,7 @@
                 </div>
             </div>
 
-            <div
-                class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:px-4 xl:w-1/2">
-                <div
-                    class='transition bg-gray-50 hover:bg-gray-100 md:md:h-80 lg:w-96 w-full rounded-3xl p-10 cursor-pointer'>
-                    <div>
-                        <img style='height: 80px;' class='rounded-xl mb-5'
-                            src='https://static.wixstatic.com/media/5cf9e9_bff0b9368f6e4cd58f76ab3b438b1ba5~mv2.png/v1/fill/w_80,h_80,al_c,q_85,usm_0.66_1.00_0.01/Logo5.webp'>
-                    </div>
-                    <h3 class='mb-4 text-black' style='font-size: 24px'><strong>Peerlab Tutoring</strong></h3>
-                    <p style='color: #848484' class='mb-2'>PeerLab Tutoring is a student-based FREE tutoring
-                        nonprofit based in Smithtown, NY. </p>
-                    <a href='/peerlab' class='link transition text-black md:mr-7 hover:text-gray-500'>
-                        <strong>More Info</strong>
-                    </a>
-                </div>
-            </div>
+            
 
         </div>
 </section>
@@ -228,19 +227,19 @@
                     <div>
                         <p class="text-sm text-gray-600 font-bold text-left mt-4">Full Name</p>
                         <input id='form-name'
-                            class="w-full bg-gray-100 text-black mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                            class="w-full bg-gray-50 text-black mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                             type="text" placeholder="">
                     </div>
                     <div class="mt-8">
                         <p class="text-sm text-gray-600 font-bold text-left">Email</p>
                         <input id='form-email'
-                            class="w-full bg-gray-100 text-black mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                            class="w-full bg-gray-50 text-black mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                             type="email">
                     </div>
                     <div class="mt-8">
                         <p class="text-sm text-gray-600 font-bold text-left">Message</p>
                         <textarea id='form-message'
-                            class="w-full h-32 bg-gray-100 text-black mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
+                            class="w-full h-32 bg-gray-50 text-black mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
                     </div>
                     <div class="mt-8">
                         <button style='color: white;' onclick="addData()"

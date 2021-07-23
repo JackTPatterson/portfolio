@@ -12,9 +12,10 @@ body {
   animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+
 #abt-lnk {
   margin-right: 10px;
-  animation: pull-left 1s ease;
+  animation: pull-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;;
   animation-fill-mode: forwards;
   animation-delay: .1s;
   opacity: 0;
@@ -22,7 +23,7 @@ body {
 
 #welcome-lnk {
   margin-right: 10px;
-  animation: pull-left 1s ease;
+  animation: pull-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;;
   animation-fill-mode: forwards;
   animation-delay: .2s;
   opacity: 0;
@@ -30,7 +31,7 @@ body {
 
 #contact-lnk {
   margin-left: 10px;
-  animation: pull-right 1s ease;
+  animation: pull-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;;
   animation-fill-mode: forwards;
   animation-delay: .2s;
   opacity: 0;
@@ -38,7 +39,7 @@ body {
 
 #test-lnk {
   margin-left: 10px;
-  animation: pull-right 1s ease;
+  animation: pull-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;;
   animation-fill-mode: forwards;
   animation-delay: .1s;
   opacity: 0;
@@ -46,7 +47,7 @@ body {
 
 #port-lnk {
 
-  animation: op 1s ease;
+  animation: op 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;;
   animation-fill-mode: forwards;
   opacity: 0;
 }
@@ -110,12 +111,18 @@ body {
   animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-/* -------------------------------- */
-/* 
 
 
 
 /* -------------------------------- */
+
+
+
+
+/* -------------------------------- */
+
+
+
 
 
 @keyframes slide-top {
@@ -187,7 +194,7 @@ body {
 
 
 .error {
-  margin-top: calc(20% - 100px);
+  margin-top: calc(10% - 100px);
 }
 
 #welcome-lnk, #abt-lnk, #contact-lnk, #text-lnk, #port-lnk, #test-lnk {
@@ -198,6 +205,7 @@ body {
   transition: all 0.2s;
   font-weight: bold;
   cursor: pointer;
+  letter-spacing: 1px;
 
 }
 
@@ -221,3 +229,4 @@ body {
   left: 0;
   background: #000;
 }
+
