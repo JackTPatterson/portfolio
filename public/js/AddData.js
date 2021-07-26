@@ -36,7 +36,7 @@ function showAlert(){
     setTimeout(() => {  
         $( "#alert" ).animate({
             "opacity": "0",
-            "top": "-20px"
+            "top": "-40px"
            }, 300)
 }, 3000)
   }

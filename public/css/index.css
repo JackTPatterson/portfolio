@@ -214,26 +214,10 @@ body {
   letter-spacing: 1px;
 }
 
-#welcome-lnk:after, #abt-lnk:after, #contact-lnk:after, #text-lnk:after, #port-lnk:after, #test-lnk:after {
-  content: '';
-  display: block;
-  position: absolute;
-  bottom: -2px;
-  left: 50%;
-  height: 2px;
-  width: 0;
-  background: transparent;
-}
 
-#welcome-lnk:after, #abt-lnk:after, #contact-lnk:after, #text-lnk:after, #port-lnk:after, #test-lnk:after {
-  transition: width .2s ease, background-color .2s ease, left .2s ease;
-}
 
-#welcome-lnk:hover:after, #abt-lnk:hover:after, #contact-lnk:hover:after, #text-lnk:hover:after, #port-lnk:hover:after, #test-lnk:hover:after {
-  width: 100%;
-  left: 0;
-  background: #000;
-}
+
+
 
 #port-img {
   margin-top: 27rem;
