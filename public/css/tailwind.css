@@ -13034,7 +13034,7 @@ video {
 }
 
 .mt-72 {
-  margin-top: 18rem;
+  padding-top: 18rem;
 }
 
 .mr-72 {
@@ -27106,7 +27106,7 @@ video {
 }
 
 .z-50 {
-  z-index: 50;
+  z-index: 9999999;
 }
 
 .z-auto {
@@ -104332,7 +104332,7 @@ video {
   }
 
   .lg\:mb-0 {
-    margin-bottom: 0px;
+    margin-bottom: 10px;
   }
 
   .lg\:ml-0 {
@@ -118487,6 +118487,7 @@ video {
 
   .lg\:visible {
     visibility: visible;
+    /* z-index: -20; */
   }
 
   .lg\:invisible {

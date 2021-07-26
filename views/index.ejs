@@ -23,7 +23,6 @@
     }
 
     
-    
 
 </style>
 <section id='main' class='lg:mt-40 mt-14 mb-24' data-aos="smooth" data-aos-delay="0"
@@ -36,12 +35,10 @@
                             Developer</strong></h1>
 
                 
-                <p class=' mb-16' style='line-height: 1.75em; color: #848484'>Commodo id cupidatat ipsum amet
-                    pariatur
-                    velit est. Tempor sit esse qui ullamco do commodo esse amet. Deserunt magna aliquip sit id Lorem
-                    aliquip minim es</p>
+                <p class=' mb-16' style='line-height: 1.75em; color: #848484'>My name is Jack. I am 17 years old and a senior in high school. I live in New York(...). I mainly create websites for others but can dabble in other technologies such as ios and android apps.</p>
+                    
                 <button onclick='scrollToContact()' id='main-btn'
-                    class="mb-10 cursor-pointer lg:mb-0 anim transition flex bg-black text-white font-bold py-3 px-4 rounded-lg">
+                    class="mb-10 z-50 cursor-pointer lg:mb-0 anim transition flex bg-black text-white font-bold py-3 px-4 rounded-lg">
                     Contact Me <div class=' transition ml-2' id='btn-arrow'><svg xmlns="http://www.w3.org/2000/svg"
                             class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -56,7 +53,7 @@
         </div>
 
     </div>
-    <div id='scroll-text' class='anim mt-72 px-5 mx-auto max-w-4xl'>
+    <!-- <div id='scroll-text' class='anim mt-72 px-5 mx-auto max-w-4xl'>
         <div class='flex md:pt-44 invisible lg:visible'>
             <p style='color: #848484'>Scroll Down</p>
             <svg style="fill: #848484;" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -64,7 +61,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 13l-5 5m0 0l-5-5m5 5V6" />
             </svg>
         </div>
-    </div>
+    </div> -->
 </section>
 
 <section id='about' class='mt-96 sm:pt-72 lg:pt-10 pt-72' data-aos="smooth" data-aos-delay="0"
@@ -72,13 +69,7 @@
     <div id='about-default' class='mx-auto max-w-4xl px-5'>
         <h1 class='text-5xl mb-3 mt-56 md:mt-10 ml12' style='line-height: 1.25em;'><strong class='js-scroll'>About
                 Me</strong></h1>
-        <p style='line-height: 1.75em; color: #848484'>Enim nulla nulla est esse officia velit eiusmod
-            reprehenderit. Id
-            proident laboris et aliqua fugiat. Tempor excepteur dolor mollit cupidatat nisi proident anim proident
-            dolor
-            in quis minim. Duis est in irure enim duis dolor consequat nostrud cillum. Qui amet voluptate cillum
-            Lorem
-            magna ex ex incididunt nulla sint. Ad esse exercitation proident ea consequat laborum ullamco quis.</p>
+        <p style='line-height: 1.75em; color: #848484'>My name is Jack. I am 17 years old and a senior in high school. I live in New York(...). I mainly create websites for others but can dabble in other technologies such as ios and android apps. Most have my projects have been nonprofit so far but as I continue to advance my skills, I pursue freelancing as a way to start my career as a developer.</p>
     </div>
 </section>
 
@@ -315,7 +306,6 @@
     document.addEventListener('aos:in', ({
         detail
     }) => {
-        console.log(detail.id)
 
         if (detail.id === 'about') {
             var textWrapper = document.querySelector('.ml12');

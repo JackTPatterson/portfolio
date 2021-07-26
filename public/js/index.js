@@ -2,11 +2,6 @@ $(document).ready(function () {
 
     var scroller = setInterval(scroll, 5);
 
-
-
-
-
-
     var wel = document.getElementById('welcome-lnk2')
     var abt = document.getElementById('abt-lnk2')
     var port = document.getElementById('port-lnk2')
@@ -123,3 +118,4 @@ AOS.init({
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
 });
+

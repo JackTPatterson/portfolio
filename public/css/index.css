@@ -206,7 +206,6 @@ body {
   font-weight: bold;
   cursor: pointer;
   letter-spacing: 1px;
-
 }
 
 #welcome-lnk:after, #abt-lnk:after, #contact-lnk:after, #text-lnk:after, #port-lnk:after, #test-lnk:after {
@@ -228,5 +227,29 @@ body {
   width: 100%;
   left: 0;
   background: #000;
+}
+
+#port-img {
+  margin-top: 27rem;
+}
+
+
+@media (max-width: 1024px) {
+  #port-img {
+    margin-top: 27rem;
+  }
+}
+
+
+@media (max-width: 768px) {
+  #port-img {
+    margin-top: 32rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #port-img {
+    margin-top: 45rem;
+  }
 }
 
