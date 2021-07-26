@@ -1,6 +1,9 @@
 $(document).ready(function () {
 
-    
+
+    console.log($(window).height());
+
+    $('#scroll-text').css({'padding-top': $(window).height() - 600})
     
 
     var scroller = setInterval(scroll, 5);
