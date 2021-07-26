@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    
+    
+
     var scroller = setInterval(scroll, 5);
 
     var wel = document.getElementById('welcome-lnk2')

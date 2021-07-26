@@ -5,6 +5,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#main {
+  height: 400px;
+}
+
 
 .anim {
   transition-property: transform;
