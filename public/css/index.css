@@ -259,4 +259,5 @@ body {
 
 #scroll-text {
   pointer-events:none;
+  padding-top: 450px;
 }

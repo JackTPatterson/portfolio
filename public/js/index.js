@@ -3,8 +3,24 @@ $(document).ready(function () {
 
     console.log($(window).height());
 
-    $('#scroll-text').css({'padding-top': $(window).height() - 600})
-    
+    if ($(window).height() > 900) {
+        $('#scroll-text').css({
+            'padding-top': $(window).height() - 600
+        })
+    }
+    else if($(window).height() > 700){
+        $('#scroll-text').css({
+            'padding-top': $(window).height() - 450
+        })
+    }
+
+    else if($(window).height() > 600){
+        $('#scroll-text').css({
+            'padding-top': $(window).height() - 200
+        })
+    }
+
+
 
     var scroller = setInterval(scroll, 5);
 
@@ -17,47 +33,47 @@ $(document).ready(function () {
 
 
 
-    wel.onclick = function (){
-            $('html, body').animate({
-                scrollTop: window.pageYOffset + document.getElementById('main').offsetTop - 40
-            }, 1300);
-        }
-
-    
-    abt.onclick = function (){
-            $('html, body').animate({
-                scrollTop: window.pageYOffset + document.getElementById('about').offsetTop + 120
-            }, 1300);
-    }
-    port.onclick = function (){
-
-
-            $('html, body').animate({
-                scrollTop: window.pageYOffset + document.getElementById('portfolio').offsetTop - 40
-            }, 1300);
-        
-    }
-    cont.onclick = function (){
-
-
-            $('html, body').animate({
-                scrollTop: window.pageYOffset + document.getElementById('contact').offsetTop - 40
-            }, 1300);
-        
-    }
-    test.onclick = function (){
-
-
-            $('html, body').animate({
-                scrollTop: 2270
-            }, 1300);
-        
-    
+    wel.onclick = function () {
+        $('html, body').animate({
+            scrollTop: window.pageYOffset + document.getElementById('main').offsetTop - 40
+        }, 1300);
     }
 
-   
 
-        
+    abt.onclick = function () {
+        $('html, body').animate({
+            scrollTop: window.pageYOffset + document.getElementById('about').offsetTop + 120
+        }, 1300);
+    }
+    port.onclick = function () {
+
+
+        $('html, body').animate({
+            scrollTop: window.pageYOffset + document.getElementById('portfolio').offsetTop - 40
+        }, 1300);
+
+    }
+    cont.onclick = function () {
+
+
+        $('html, body').animate({
+            scrollTop: window.pageYOffset + document.getElementById('contact').offsetTop - 40
+        }, 1300);
+
+    }
+    test.onclick = function () {
+
+
+        $('html, body').animate({
+            scrollTop: 2270
+        }, 1300);
+
+
+    }
+
+
+
+
 
     setTimeout(function () {
         clearInterval(scroller);
@@ -124,4 +140,3 @@ AOS.init({
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 
 });
-
