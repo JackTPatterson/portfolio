@@ -26,7 +26,7 @@ $(document).ready(function () {
     
     abt.onclick = function (){
             $('html, body').animate({
-                scrollTop: window.pageYOffset + document.getElementById('about').offsetTop + 30
+                scrollTop: window.pageYOffset + document.getElementById('about').offsetTop + 120
             }, 1300);
     }
     port.onclick = function (){

@@ -3,6 +3,7 @@ body {
   font-family: "Sora" !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  animation: blurIn 1s  cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
 #main {
@@ -20,7 +21,7 @@ body {
 
 #abt-lnk {
   margin-right: 10px;
-  animation: pull-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;;
+  animation: pull-left .5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;;
   animation-fill-mode: forwards;
   animation-delay: .1s;
   opacity: 0;
@@ -28,7 +29,7 @@ body {
 
 #welcome-lnk {
   margin-right: 10px;
-  animation: pull-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;;
+  animation: pull-left .5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;;
   animation-fill-mode: forwards;
   animation-delay: .2s;
   opacity: 0;
@@ -36,7 +37,7 @@ body {
 
 #contact-lnk {
   margin-left: 10px;
-  animation: pull-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;;
+  animation: pull-right .5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;;
   animation-fill-mode: forwards;
   animation-delay: .2s;
   opacity: 0;
@@ -44,7 +45,7 @@ body {
 
 #test-lnk {
   margin-left: 10px;
-  animation: pull-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;;
+  animation: pull-right .5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;;
   animation-fill-mode: forwards;
   animation-delay: .1s;
   opacity: 0;
@@ -258,3 +259,20 @@ body {
   }
 }
 
+
+@keyframes blurIn{
+  0%{
+    filter: blur(10px);
+
+  }
+
+  100%{
+    filter: blur(0px);
+
+  }
+}
+
+
+#scroll-text {
+  pointer-events:none;
+}
