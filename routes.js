@@ -31,4 +31,8 @@ router.get('/peerlab', function(req, res){
     res.render("projects/peerlab")
 })
 
+router.get('/shse', function(req, res){
+    res.render("projects/shse")
+})
+
 module.exports = router;
