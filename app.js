@@ -1,5 +1,6 @@
 var express = require("express");
 var path = require("path");
+var favicon = require('serve-favicon');
 
 
 var routes = require("./routes");
@@ -13,6 +14,9 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(routes);
 app.use(express.static(__dirname + '/public'));
+
+app.use(favicon(__dirname + '/public/images/favicon.png'));
+
 
 app.use(function(req, res, next){
     res.status(404);

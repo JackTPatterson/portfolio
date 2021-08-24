@@ -15,6 +15,7 @@
     "express": "^4.17.1",
     "path": "^0.12.7",
     "scrollreveal": "^4.0.7",
+    "serve-favicon": "^2.5.0",
     "tailwindcss": "^2.0.2"
   }
 }
