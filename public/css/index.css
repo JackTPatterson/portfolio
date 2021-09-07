@@ -51,12 +51,21 @@ body {
   opacity: 0;
 }
 
+#shop-lnk {
+  margin-left: 10px;
+  animation: pull-right .5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;;
+  animation-fill-mode: forwards;
+  animation-delay: .1s;
+  opacity: 0;
+}
+
 #port-lnk {
 
   animation: op 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;;
   animation-fill-mode: forwards;
   opacity: 0;
 }
+
 
 
 @keyframes pull-left {
@@ -117,6 +126,21 @@ body {
   animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
+[data-aos="smooth2"] {
+  opacity: 0;
+  transition-property: transform;
+  animation-delay: .3s;
+}
+
+
+
+[data-aos="smooth2"].aos-animate {
+  opacity: 1;
+  -webkit-animation: slide-top2 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-top2 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation-delay: .3s;
+}
+
 
 
 
@@ -143,12 +167,22 @@ body {
   }
 }
 
+@keyframes slide-top2 {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+}
+
 
 
 .ml12 {
   font-weight: bold;
-
-
 }
 
 
@@ -163,6 +197,11 @@ body {
 .ml15 {
   font-weight: bold;
 }
+
+.ml16 {
+  font-weight: bold;
+}
+
 
 .ml12 .letter {
   display: inline-block;
@@ -181,6 +220,12 @@ body {
 }
 
 .ml15 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+
+.ml16 .letter {
   display: inline-block;
   line-height: 1em;
 }
@@ -207,11 +252,11 @@ body {
   transition: all 0.2s;
 }
 
-#welcome-lnk:hover, #abt-lnk:hover, #contact-lnk:hover, #text-lnk:hover, #port-lnk:hover, #test-lnk:hover {
+#welcome-lnk:hover, #abt-lnk:hover, #contact-lnk:hover, #text-lnk:hover, #port-lnk:hover, #test-lnk:hover, #shop-lnk:hover {
   transition: all 0.2s;
   font-weight: bold;
   cursor: pointer;
-  letter-spacing: 1px;
+
 }
 
 
@@ -260,4 +305,25 @@ body {
 #scroll-text {
   pointer-events:none;
   padding-top: 450px;
+}
+
+#nav_big_text {
+  position: fixed;
+  right: 1.5rem;
+  color: #dce2e5;
+  opacity: 0;
+  font-size: 7rem;
+  font-weight: 700;
+  line-height: 0.8;
+  text-transform: uppercase;
+  transform: translateX(10%);
+  transition-property: transform, opacity;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-out;
+  z-index: -1;
+}
+
+#nav_big_text.big_text_active {
+  transform: translateX(0%);
+  opacity: 1;
 }

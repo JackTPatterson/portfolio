@@ -1,11 +1,12 @@
 $(document).ready(function () {
 
 
+
     console.log($(window).height());
 
     if ($(window).height() > 900) {
         $('#scroll-text').css({
-            'padding-top': $(window).height() - 600
+            'padding-top': $(window).height() - 500
         })
     }
     else if($(window).height() > 700){
@@ -16,7 +17,7 @@ $(document).ready(function () {
 
     else if($(window).height() > 600){
         $('#scroll-text').css({
-            'padding-top': $(window).height() - 200
+            'padding-top': $(window).height() - 450
         })
     }
 
@@ -27,6 +28,8 @@ $(document).ready(function () {
     var wel = document.getElementById('welcome-lnk2')
     var abt = document.getElementById('abt-lnk2')
     var port = document.getElementById('port-lnk2')
+    var shop = document.getElementById('shop-lnk2')
+
     var cont = document.getElementById('contact-lnk2')
     var test = document.getElementById('test-lnk2')
 
@@ -61,13 +64,22 @@ $(document).ready(function () {
         }, 1300);
 
     }
+
+    shop.onclick = function () {
+
+
+        $('html, body').animate({
+            scrollTop: window.pageYOffset + document.getElementById('shop').offsetTop - 40
+        }, 1300);
+
+    }
+
     test.onclick = function () {
 
 
         $('html, body').animate({
-            scrollTop: 2270
+            scrollTop: window.pageYOffset + document.getElementById('testimonials').offsetTop - 40
         }, 1300);
-
 
     }
 

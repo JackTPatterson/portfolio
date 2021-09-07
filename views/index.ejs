@@ -1,11 +1,12 @@
 <%- include('./partials/_header.ejs'); %>
 
 <header class='lg:flex justify-center mt-10 hidden absolute lg:visible lg:relative'>
-   
+
     <ul class="flex">
         <li id='welcome-lnk'><a id='welcome-lnk2'>Welcome</a></li>
         <li id='abt-lnk'><a id='abt-lnk2'>About</a></li>
         <li id='port-lnk'><a id='port-lnk2'>Portfolio</a></li>
+        <li id='shop-lnk'><a id='shop-lnk2'>Shop</a></li>
         <li id='test-lnk'><a id='test-lnk2'>Testimonials</a></li>
         <li id='contact-lnk'><a id='contact-lnk2'>Contact</a></li>
 
@@ -13,7 +14,6 @@
 </header>
 
 <style>
-
     .link {
         cursor: pointer;
         font-size: 18px;
@@ -21,24 +21,22 @@
         white-space: nowrap;
         color: var(--color-text);
     }
-
-    
-
 </style>
-<section id='main' class='lg:mt-40 mt-12' data-aos="smooth" data-aos-delay="0"
-    data-aos-easing="ease-in-out-cubic">
+<section id='main' class='lg:mt-40 mt-12' data-aos="smooth" data-aos-delay="0" data-aos-easing="ease-in-out-cubic">
     <div id='default' class='px-5 mx-auto max-w-4xl'>
         <div id='wrapper' class='lg:flex lg:justify-center' style='height: 1.8em; justify-content: space-between;'>
             <div id='split-1' class='mr-5 max-w-xl'>
                 <h1 class='text-5xl mb-6 mt-5 text-bold'><strong>Hello, I'm Jack</strong></h1>
-                    <h1 class='text-5xl mb-6 mt-5'><strong>A Student
-                            Developer</strong></h1>
+                <h1 class='text-5xl mb-6 mt-5'><strong>A Student
+                        Developer</strong></h1>
 
-                
-                <p class='mb-16' style='line-height: 1.75em; color: #848484'>My name is Jack. I'm 17 years old, I am a senior in high school, and I live in New York. I mainly create websites for others but can dabble in other technologies such as ios and android apps</p>
-                    
+
+                <p class='mb-16' style='line-height: 1.75em; color: #848484'>My name is Jack. I'm 17 years old, I am a
+                    senior in high school, and I live in New York. I mainly create websites for others but can dabble in
+                    other technologies such as ios and android apps</p>
+
                 <button onclick='scrollToContact()' id='main-btn'
-                    class="mb-10 z-50 cursor-pointer lg:mb-0 anim transition flex bg-black text-white font-bold py-3 px-4 rounded-lg">
+                    class="mb-10 z-50 cursor-pointer lg:mb-0 anim transition flex bg-black text-white font-bold py-3 px-4 rounded-lg ">
                     Contact Me <div class=' transition ml-2' id='btn-arrow'><svg xmlns="http://www.w3.org/2000/svg"
                             class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -46,15 +44,16 @@
                         </svg></div>
                 </button>
             </div>
-            <div id='split-2' class='my-auto lg:mt-20'>
-                <img class='w-72 anim rounded-2xl inline-block lg:mt-0'
+            <div id='split-2' class='my-auto lg:mt-20 transform hover:scale-105 transition duration-500'>
+                <img class='w-72 anim rounded-2xl inline-block lg:mt-0 '
                     src='https://yt3.ggpht.com/ytc/AAUvwniskz1nDYKqQqmRcwyspqXEXQXlgiUia7V0GNFn7g=s900-c-k-c0x00ffffff-no-rj'>
             </div>
         </div>
 
     </div>
 
-    <div id='scroll-text' class='anim px-5 mx-auto max-w-4xl'>
+    <div data-aos="smooth2" data-aos-delay="0" data-aos-easing="ease-in-out-cubic" id='scroll-text'
+        class='anim px-5 mx-auto max-w-4xl'>
         <div class='flex md:pt-44 invisible lg:visible'>
             <p style='color: #848484'>Scroll Down</p>
             <svg style="fill: #848484;" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -63,13 +62,15 @@
             </svg>
         </div>
 </section>
-
-<section id='about' class='' data-aos="smooth" data-aos-delay="0"
-    data-aos-easing="ease-in-out-cubic">
+<div id="nav_big_text"></div>
+<section id='about' class='' data-aos="smooth" data-aos-delay="0" data-aos-easing="ease-in-out-cubic">
     <div id='about-default' class='mx-auto max-w-4xl px-5'>
         <h1 class='text-5xl mb-3 pt-72 md:pt-52 ml12' style='line-height: 1.25em;'><strong class='js-scroll'>About
                 Me</strong></h1>
-        <p style='line-height: 1.75em; color: #848484'>My name is Jack. I'm 17 years old, I am a senior in high school, and I live in New York. I mainly create websites for others but can dabble in other technologies such as ios and android apps. Most of my projects have been nonprofit so far but as I continue to advance my skills, I want to pursue freelancing as a way to start my career as a developer.</p>
+        <p style='line-height: 1.75em; color: #848484'>My name is Jack. I'm 17 years old, I am a senior in high school,
+            and I live in New York. I mainly create websites for others but can dabble in other technologies such as ios
+            and android apps. Most of my projects have been nonprofit so far but as I continue to advance my skills, I
+            want to pursue freelancing as a way to start my career as a developer.</p>
     </div>
 </section>
 
@@ -82,8 +83,7 @@
         <h1 class='text-5xl mb-3 mt-56 md:mt-10 ml13' style='line-height: 1.25em;'><strong>Portfolio</strong></h1>
         <p style='color: #848484' class='mb-6'>Here's some of the things I have worked on
             <span id='link-span'>
-                <a href='/portfolio' id='port-link'
-                    class='link transition mb-6 text-black md:mr-7 md:mt-0'>
+                <a href='/portfolio' id='port-link' class='link transition mb-6 text-black md:mr-7 md:mt-0'>
                     <strong class='text-black md:float-right'>View Full Portfolio</strong>
                 </a>
             </span>
@@ -92,13 +92,18 @@
         <div class="flex flex-wrap -mx-3 overflow-hidden sm:-mx-3 md:-mx-3 lg:-mx-3 xl:-mx-3">
 
             <div
-                class="my-3  w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4  xl:w-1/2">
+                class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:pl-4 xl:w-1/2">
+
                 <div class='transition bg-gray-50 hover:bg-gray-100 md:h-80 w-full rounded-3xl p-10 '>
+                    <!-- <div>
+                        <h1 class='float-right text-6xl text-gray-200 font-bold'>01</h1>
+                    </div> -->
                     <div class='mb-5'>
                         <img style='height: 80px;' class=rounded-xl src='/images/icon.png'>
                     </div>
                     <h3 class='mb-4 text-black' style='font-size: 24px'><strong>FRCS</strong></h3>
-                    <p style='color: #848484' class='mb-2'>FRCS is a international crowed sourced platform created to gather data for the FIRST Robotics Competition</p>
+                    <p style='color: #848484' class='mb-2'>FRCS is a international crowed sourced platform created to
+                        gather data for the FIRST Robotics Competition</p>
                     <a href='/frcs' class='link link transition text-black md:mr-7 '>
                         <strong>More Info</strong>
                     </a>
@@ -108,11 +113,15 @@
             <div
                 class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:pl-4 xl:w-1/2">
                 <div class='transition bg-gray-50 hover:bg-gray-100 md:h-80 w-full rounded-3xl p-10 '>
+                    <!-- <div>
+                        <h1 class='float-right text-6xl text-gray-200 font-bold'>02</h1>
+                    </div> -->
                     <div class='mb-5'>
                         <img style='height: 80px;' class=rounded-xl src='/images/scsday.png'>
                     </div>
                     <h3 class='mb-4 text-black' style='font-size: 24px'><strong>SCSDay</strong></h3>
-                    <p style='color: #848484' class='mb-2'>SCSDay is a quick way to check the current day based on an A / B day schedule</p>
+                    <p style='color: #848484' class='mb-2'>SCSDay is a quick way to check the current day based on an A
+                        / B day schedule</p>
                     <a href='/scsday' class='link transition text-black md:mr-7 '>
                         <strong>More Info</strong>
                     </a>
@@ -124,11 +133,14 @@
             <div
                 class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:pl-4 xl:w-1/2">
                 <div class='transition bg-gray-50 hover:bg-gray-100 md:h-80 w-full rounded-3xl p-10 '>
+                    <!-- <div>
+                        <h1 class='float-right text-6xl text-gray-200 font-bold'>03</h1>
+                    </div> -->
                     <div>
                         <img style='height: 80px;' class='rounded-xl mb-5'
                             src='https://static.wixstatic.com/media/5cf9e9_bff0b9368f6e4cd58f76ab3b438b1ba5~mv2.png/v1/fill/w_80,h_80,al_c,q_85,usm_0.66_1.00_0.01/Logo5.webp'>
                     </div>
-                    
+
                     <h3 class='mb-4 text-black' style='font-size: 24px'><strong>Peerlab Tutoring</strong></h3>
                     <p style='color: #848484' class='mb-2'>PeerLab Tutoring is a student-based FREE tutoring
                         nonprofit based in Smithtown, NY. </p>
@@ -141,8 +153,11 @@
             </div>
 
             <div
-                class="my-3 pb-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:pl-4 xl:w-1/2">
+                class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:pl-4 xl:w-1/2">
                 <div class='transition bg-gray-50 hover:bg-gray-100 md:h-80 w-full rounded-3xl p-10 '>
+                    <!-- <div>
+                        <h1 class='float-right text-6xl text-gray-200 font-bold'>04</h1>
+                    </div> -->
                     <div class='rounded-xl h-20 w-20 mb-4' style='background-color: #2ab7d6;'>
                         <img class=rounded-xl src='/images/customz.png'>
                     </div>
@@ -155,10 +170,103 @@
                     </a>
                 </div>
             </div>
+        </div>
+</section>
 
-            
+<center>
+    <hr class='md:max-w-4xl md:my-24 mt-24 w-5/6 border-gray-200'>
+</center>
+
+<section id='shop' class='' data-aos="smooth" data-aos-delay="0" data-aos-easing="ease-in-out-cubic">
+    <div id='portfolio-default' class='mx-auto max-w-4xl px-5'>
+        <h1 class='text-5xl mb-3 mt-56 md:mt-10 ml16' style='line-height: 1.25em;'><strong>Shop</strong></h1>
+        <p style='color: #848484' class='mb-6'>Below is a list of web templates that I have created to purchase
+            <span id='link-span'>
+                <a href='/shop' id='port-link' class='link transition mb-6 text-black md:mr-7 md:mt-0'>
+                    <strong class='text-black md:float-right'>View Full Shop</strong>
+                </a>
+            </span>
+        </p>
+        
+
+        <div class="flex flex-wrap -mx-3 overflow-hidden sm:-mx-3 md:-mx-3 lg:-mx-3 xl:-mx-3">
+        <div
+            class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:pl-4 xl:w-1/2">
+            <div class='transition bg-gray-50 hover:bg-gray-100 md:h-96 w-full rounded-3xl p-10 '>
+                <!-- <div>
+                    <h1 class='float-right text-6xl text-gray-200 font-bold'>02</h1>
+                </div> -->
+                <div class='mb-5'>
+                    <div class='bg-black p-1 px-10 absolute rounded-lg mt-4 ml-4'>
+                        <p class='text-white font-bold'>$100</p>
+                    </div>
+                    <img style='width: 100%' class='rounded-xl '
+                        src='https://www.russorizio.com/wp-content/uploads/2016/07/ef3-placeholder-image.jpg'>
+                </div>
+                <h3 class='mb-4 text-black' style='font-size: 24px'><strong>Product 1</strong></h3>
+                <div class='flex justify-between'>
+                    <a href='/scsday' class='link transition text-black md:mr-7 '>
+                        <strong>More Info</strong>
+                    </a>
+                    <div class='flex justify-end'>
+                        <a href='/scsday' class='link transition text-black'>
+                            <div class='flex'>
+                                <strong class='mr-2'>Add to Cart</strong>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
 
         </div>
+        
+
+        <div
+            class="my-3 px-3 w-full overflow-hidden sm:my-2 sm:px-2 md:my-3 md:px-3 lg:my-2 lg:px-2 lg:w-1/2 xl:my-4 xl:pl-4 xl:w-1/2">
+            <div class='transition bg-gray-50 hover:bg-gray-100 md:h-96 w-full rounded-3xl p-10 '>
+                <!-- <div>
+                        <h1 class='float-right text-6xl text-gray-200 font-bold'>02</h1>
+                    </div> -->
+                <div class='mb-5'>
+                    <div class='bg-black p-1 px-10 absolute rounded-lg mt-4 ml-4'>
+                        <p class='text-white font-bold'>$100</p>
+                    </div>
+                    <img style='width: 100%' class=rounded-xl
+                        src='https://www.russorizio.com/wp-content/uploads/2016/07/ef3-placeholder-image.jpg'>
+                </div>
+                <h3 class='mb-4 text-black' style='font-size: 24px'><strong>Product 2</strong></h3>
+                <div class='flex justify-between'>
+                    <a href='/scsday' class='link transition text-black md:mr-7 '>
+                        <strong>More Info</strong>
+                    </a>
+                    <div class='flex justify-end'>
+                        <a href='/scsday' class='link transition text-black'>
+                            <div class='flex'>
+                                <strong class='mr-2'>Add to Cart</strong>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        </div>
+
+
 </section>
 
 <center>
@@ -201,7 +309,8 @@
 <section id='contact' class='mb-20' data-aos="smooth" data-aos-delay="0" data-aos-easing="ease-in-out-cubic">
     <div id='portfolio-default' class='mx-auto max-w-4xl px-5 '>
         <h1 class='text-5xl mb-3 mt-56 md:mt-10 ml14' style='line-height: 1.25em;'><strong>Contact</strong></h1>
-        <p style='color: #848484' class='mb-6'>I'm here to answer any question you might have. I look forward to hearing from you</p>
+        <p style='color: #848484' class='mb-6'>I'm here to answer any question you might have. I look forward to hearing
+            from you</p>
     </div>
     <div>
         <section>
@@ -236,7 +345,6 @@
                         <button style='color: white;' onclick="addData()"
                             class="link transition text-sm font-bold tracking-wide bg-black text-white p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
                             Send Message
-
                         </button>
                     </div>
                 </div>
@@ -252,8 +360,11 @@
 
 <a onclick="scrollToTop()">
     <div id='btt'
-        class='mx-auto mb-5 link transition p-3 h-12 lg:w-1/6 md:w-1/3 w-1/3 bg-gray-100 hover:bg-gray-200 rounded-lg '>
-        <center><p>Go To Top</p></center>
+        class='mx-auto mb-5 link transition p-3 h-12 lg:w-1/6 md:w-1/3 w-1/3 bg-black hover:text-black hover:bg-gray-200 rounded-lg '>
+        <center>
+            <p class='text-white hover:text-black '>Go To Top</p>
+        </center>
+
     </div>
 </a>
 <!-- 
@@ -264,6 +375,19 @@
 </div>
 
 <script>
+    //! make text fit screen and adjust top height based on screen height
+
+
+
+    $('#nav_big_text').css({
+        'top': $(window).height() - 150
+    })
+
+    
+
+
+
+
     window.onload = setDiv();
 
     function setDiv() {
@@ -378,9 +502,46 @@
                 })
         }
 
+        if (detail.id === 'shop') {
+            var textWrapper = document.querySelector('.ml16');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+            anime.timeline({
+                    loop: false
+                })
+                .add({
+                    targets: '.ml16 .letter',
+                    translateX: [40, 0],
+                    translateZ: 0,
+                    opacity: [0, 1],
+                    easing: "easeOutExpo",
+                    duration: 1200,
+                    delay: (el, i) => 100 + 30 * i
+                })
+        }
+
     });
 
-    
+    const navLinks = document.querySelectorAll("ul a")
+
+
+    const navTextCopy = document.getElementById("nav_big_text")
+
+    for (var i = 0; i < navLinks.length; i++) {
+        navLinks[i].addEventListener("mouseover", function () {
+            let navLinkText = this.textContent
+            navTextCopy.textContent = navLinkText
+            navTextCopy.classList.add("big_text_active")
+        })
+
+
+        navLinks[i].addEventListener("mouseout", function () {
+            let navLinkText = this.textContent
+            navTextCopy.textContent = navLinkText;
+            navTextCopy.classList.remove("big_text_active")
+        })
+
+    }
 </script>
 
 <script>
