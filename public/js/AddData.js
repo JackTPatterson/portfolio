@@ -11,7 +11,7 @@ var firebaseConfig = {
  firebase.initializeApp(firebaseConfig);
  const db = firebase.firestore();
 
-function addData() {
+setTimeout(function addData() {
     db.collection("responses").add({ 
             name: $('#form-name').val(),
             email: $('#form-email').val(),
@@ -22,7 +22,7 @@ function addData() {
             console.error("Error adding document: ", error);
         });
         showAlert()
-}
+}, 60000)
 
 function showAlert(){
     $( "#alert" ).animate({
