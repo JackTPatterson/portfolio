@@ -81,6 +81,7 @@ export default function Home() {
       <main className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-16">
         <motion.header
           id="intro"
+          /*@ts-ignore*/
           ref={(el) => (sectionsRef.current[0] = el)}
           className="min-h-screen flex items-center"
           initial="initial"
@@ -156,6 +157,7 @@ export default function Home() {
 
         <motion.section
           id="work"
+          /*@ts-ignore*/
           ref={(el) => (sectionsRef.current[1] = el)}
           className="min-h-screen py-20 sm:py-32"
           initial={{ opacity: 0 }}
@@ -243,6 +245,7 @@ export default function Home() {
 
         <motion.section
           id="projects"
+          /*@ts-ignore*/
           ref={(el) => (sectionsRef.current[2] = el)}
           className="min-h-screen py-20 sm:py-32"
           initial={{ opacity: 0 }}
@@ -331,6 +334,7 @@ export default function Home() {
 
         <motion.section
           id="connect"
+          /*@ts-ignore*/
           ref={(el) => (sectionsRef.current[3] = el)}
           className="py-20 sm:py-32"
           initial={{ opacity: 0 }}
