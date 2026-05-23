@@ -181,6 +181,14 @@ export default function Home() {
             <div className="space-y-8 sm:space-y-12">
               {[
                 {
+                  year: "2025",
+                  role: "AI-Driven Business Development Lead",
+                  company: "Go!Foton",
+                  description:
+                    "Own the Go!Foton Service Platform end-to-end — production reliability, integrations, CI/CD, and release management across project management, finance, workforce, compliance, and marketplace features. Serve as the technical bridge between engineering and executive leadership, translating architecture, infrastructure investments, and technical-debt trade-offs into business impact. Drive an accelerated innovation culture through structured prototyping, feature-flag-gated experiments, competitive intelligence, and emerging-technology assessments.",
+                  tech: ["Next.js", "PostgreSQL", "Azure", "CI/CD", "AI Strategy"],
+                },
+                {
                   year: "2022",
                   role: "Co-Founder",
                   company: "Aventix",
