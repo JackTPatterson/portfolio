@@ -160,6 +160,38 @@ export const experiences: Experience[] = [
 		tech: ['Next.js', 'React Native', 'Node.js', 'Supabase', 'Web3'],
 		dateRange: '2022 — Present',
 		link: { label: 'aventix.net', url: 'https://aventix.net' },
+		sections: [
+			{
+				heading: 'Product Strategy & Vision',
+				items: [
+					'Co-founded Aventix and shaped the product vision around improving trust, security, and transparency in event ticketing',
+					'Set technical direction across the web application, mobile apps, and backend services',
+					'Established project objectives and milestones and delivered against them on schedule',
+				],
+			},
+			{
+				heading: 'Cross-Platform Engineering',
+				items: [
+					'Built the consumer-facing web application in Next.js',
+					'Built the iOS and Android mobile apps in React Native, sharing logic across platforms',
+					'Designed the Node.js + Supabase backend powering authentication, event management, and ticket inventory',
+				],
+			},
+			{
+				heading: 'Web3 Ticket Integrity',
+				items: [
+					'Integrated blockchain infrastructure to make tickets tamper-resistant and ownership verifiable end-to-end',
+					'Built secure purchase, transfer, and validation flows leveraging Web3 to guarantee authenticity in every transaction',
+				],
+			},
+			{
+				heading: 'Team Direction',
+				items: [
+					'Directed a team of three developers and designers, establishing clear objectives and reviewing progress against milestones',
+					'Coordinated design, engineering, and product priorities to ship cohesive features across web and mobile',
+				],
+			},
+		],
 	},
 ]
 
