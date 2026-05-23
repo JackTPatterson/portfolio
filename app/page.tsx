@@ -450,9 +450,11 @@ export default function Home() {
               </motion.button>
 
               <motion.button
+                onClick={() => document.getElementById("connect")?.scrollIntoView({ behavior: "smooth" })}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="group p-3 rounded-lg border border-border hover:border-muted-foreground/50 transition-all duration-300"
+                aria-label="Jump to contact section"
               >
                 <svg
                   className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors duration-300"
