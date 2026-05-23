@@ -93,7 +93,7 @@ export default function Home() {
               <motion.div className="space-y-3 sm:space-y-2" variants={fadeInUp} transition={{
                 delay: 0.2, duration: 1, ease: [0.22, 1, 0.36, 1]
               }}>
-                <div className="text-sm text-muted-foreground tracking-wider">PORTFOLIO / 2025</div>
+                <div className="text-sm text-muted-foreground tracking-wider">PORTFOLIO / 2026</div>
                 <h1 className="text-5xl sm:text-6xl lg:text-7xl font-light tracking-tight">
                   Jack
                   <br />
@@ -437,7 +437,7 @@ export default function Home() {
         >
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 sm:gap-8">
             <div className="space-y-2">
-              <div className="text-sm text-muted-foreground">© 2025 Jack Patterson. All rights reserved.</div>
+              <div className="text-sm text-muted-foreground">© 2026 Jack Patterson. All rights reserved.</div>
             </div>
 
             <div className="flex items-center gap-4">
