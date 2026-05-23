@@ -386,7 +386,7 @@ export default function Home() {
                 {[
                   { name: "GitHub", handle: "Github", url: "#" },
                   { name: "LinkedIn", handle: "LinkedIn", url: "#" },
-                  { name: "Stevens", handle: "Alumnus", url: "#" },
+                  { name: "Aventix", handle: "Co-Founder", url: "#" },
                   { name: "Go!Foton", handle: "Software Engineer", url: "#" },
                 ].map((social, index) => (
                   <motion.div
