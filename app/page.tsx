@@ -105,16 +105,17 @@ export default function Home() {
                 delay: 0.3, duration: 1, ease: [0.22, 1, 0.36, 1]
               }}>
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Computer Science student and entrepreneur building innovative
-                  <span className="text-foreground"> Web3 solutions</span>,
-                  <span className="text-foreground"> AI-powered applications</span>, and scalable
+                  Software engineer and entrepreneur building
+                  <span className="text-foreground"> AI-powered applications</span>,
+                  <span className="text-foreground"> Web3 solutions</span>, and scalable
                   <span className="text-foreground"> full-stack platforms</span>.
+                  Stevens Institute of Technology alumnus.
                 </p>
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-muted-foreground">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    Open to opportunities
+                    <div className="w-2 h-2 bg-muted-foreground/40 rounded-full"></div>
+                    Not open to opportunities
                   </div>
                   <div>Hoboken, NJ</div>
                 </div>
@@ -130,9 +131,9 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="text-sm text-muted-foreground">CURRENTLY</div>
                 <div className="space-y-2">
-                  <div className="text-foreground">Co-Founder</div>
-                  <div className="text-muted-foreground">@ Aventix</div>
-                  <div className="text-xs text-muted-foreground">2022 — Present</div>
+                  <div className="text-foreground">Software Engineer</div>
+                  <div className="text-muted-foreground">@ Go!Foton</div>
+                  <div className="text-xs text-muted-foreground">Present</div>
                 </div>
               </div>
 
@@ -354,7 +355,7 @@ export default function Home() {
 
               <div className="space-y-6">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Always interested in new opportunities, collaborations, and conversations about technology and design.
+                  Not currently open to new opportunities, but always happy to chat about technology, design, and what I'm building.
                 </p>
 
                 <div className="space-y-4">
@@ -385,8 +386,8 @@ export default function Home() {
                 {[
                   { name: "GitHub", handle: "Github", url: "#" },
                   { name: "LinkedIn", handle: "LinkedIn", url: "#" },
-                  { name: "Stevens", handle: "Student", url: "#" },
-                  { name: "Aventix", handle: "Co-Founder", url: "#" },
+                  { name: "Stevens", handle: "Alumnus", url: "#" },
+                  { name: "Go!Foton", handle: "Software Engineer", url: "#" },
                 ].map((social, index) => (
                   <motion.div
                     key={social.name}
