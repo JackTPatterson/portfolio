@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 import { motion } from "framer-motion"
 import {ArrowUpRight} from "lucide-react";
+import { experiences } from "@/lib/experience"
 
 export default function Home() {
   const [isDark, setIsDark] = useState(true)
@@ -179,73 +180,50 @@ export default function Home() {
             </motion.div>
 
             <div className="space-y-8 sm:space-y-12">
-              {[
-                {
-                  year: "2025",
-                  role: "AI-Driven Business Development Lead",
-                  company: "Go!Foton",
-                  description:
-                    "Own the Go!Foton Service Platform end-to-end — production reliability, integrations, CI/CD, and release management across project management, finance, workforce, compliance, and marketplace features. Serve as the technical bridge between engineering and executive leadership, translating architecture, infrastructure investments, and technical-debt trade-offs into business impact. Drive an accelerated innovation culture through structured prototyping, feature-flag-gated experiments, competitive intelligence, and emerging-technology assessments.",
-                  tech: ["Next.js", "PostgreSQL", "Azure", "CI/CD", "AI Strategy"],
-                },
-                {
-                  year: "2022",
-                  role: "Co-Founder",
-                  company: "Aventix",
-                  description:
-                    "Co-founded and developed a multi-platform application enabling users to manage events and purchase tickets using Web3 technology. Directed a team of three developers and designers, establishing clear objectives and achieving all project milestones.",
-                  tech: ["Next.js", "React Native", "Node.js", "Supabase", "Web3"],
-                },
-                {
-                  year: "2025",
-                  role: "Information Security Intern",
-                  company: "Ropes & Gray LLP",
-                  description:
-                    "Monitored and analyzed SIEM alerts to identify threats, responded to security incidents, and researched Microsoft's Azure Network Security Perimeter to enhance protection for sensitive workloads.",
-                  tech: ["SIEM", "Azure", "Security", "Risk Assessment"],
-                },
-                {
-                  year: "2024",
-                  role: "Course Assistant",
-                  company: "Stevens Institute of Technology",
-                  description:
-                    "Created and presented instructional content on UI/UX design, git, deploying web apps, and domain management. Provided personalized support to help students resolve technical challenges.",
-                  tech: ["UI/UX", "Git", "Web Deployment", "Teaching"],
-                },
-              ].map((job, index) => (
+              {experiences.map((job) => (
                 <motion.div
-                  key={index}
+                  key={job.slug}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.5 }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                   whileHover={{ x: 4 }}
-                  className="group grid lg:grid-cols-12 gap-4 sm:gap-8 py-6 sm:py-8 border-b border-border/50 hover:border-border transition-colors duration-500"
                 >
-                  <div className="lg:col-span-2">
-                    <div className="text-xl sm:text-2xl font-light text-muted-foreground group-hover:text-foreground transition-colors duration-500">
-                      {job.year}
+                  <Link
+                    href={`/experience/${job.slug}`}
+                    className="group grid lg:grid-cols-12 gap-4 sm:gap-8 py-6 sm:py-8 border-b border-border/50 hover:border-border transition-colors duration-500"
+                  >
+                    <div className="lg:col-span-2">
+                      <div className="text-xl sm:text-2xl font-light text-muted-foreground group-hover:text-foreground transition-colors duration-500">
+                        {job.year}
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="lg:col-span-6 space-y-3">
-                    <div>
-                      <h3 className="text-lg sm:text-xl font-medium">{job.role}</h3>
-                      <div className="text-muted-foreground">{job.company}</div>
+                    <div className="lg:col-span-6 space-y-3">
+                      <div>
+                        <h3 className="text-lg sm:text-xl font-medium flex items-center gap-2">
+                          {job.role}
+                          <ArrowUpRight
+                            size={16}
+                            className="w-4 h-4 opacity-0 group-hover:opacity-100 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 text-muted-foreground"
+                          />
+                        </h3>
+                        <div className="text-muted-foreground">{job.company}</div>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed max-w-lg">{job.description}</p>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed max-w-lg">{job.description}</p>
-                  </div>
 
-                  <div className="lg:col-span-4 flex flex-wrap gap-2 lg:justify-end mt-2 lg:mt-0">
-                    {job.tech.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 text-xs text-muted-foreground rounded group-hover:border-muted-foreground/50 transition-colors duration-500"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                    <div className="lg:col-span-4 flex flex-wrap gap-2 lg:justify-end mt-2 lg:mt-0">
+                      {job.tech.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2 py-1 text-xs text-muted-foreground rounded group-hover:border-muted-foreground/50 transition-colors duration-500"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </Link>
                 </motion.div>
               ))}
             </div>
@@ -284,12 +262,12 @@ export default function Home() {
                   link: "https://aventix.net",
                 },
                 {
-                  title: "InboxLabs",
+                  title: "Rinkside",
                   excerpt:
-                    "AI-powered email automation SaaS platform that intelligently triages Gmail messages and generates contextual draft responses, reducing email management time by up to 80%.",
-                  date: "Aug 2024",
-                  tech: "Next.js, TypeScript, PostgreSQL, OpenAI",
-                    link: "https://inboxlabs.app",
+                    "Native iOS app delivering rich NHL stats, charts, and game-day data with smooth animations and a privacy-first design — no analytics, no tracking, all preferences stored on-device.",
+                  date: "Jan 2024",
+                  tech: "React Native, Expo, TypeScript, NHL Data",
+                    link: "https://github.com/JackTPatterson/Rinkside",
                 },
                 {
                   title: "FRCS",
