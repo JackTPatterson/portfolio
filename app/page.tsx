@@ -395,7 +395,7 @@ export default function Home() {
                   { name: "GitHub", handle: "Github", url: "#" },
                   { name: "LinkedIn", handle: "LinkedIn", url: "#" },
                   { name: "Aventix", handle: "Co-Founder", url: "#" },
-                  { name: "Go!Foton", handle: "AI-Driven Biz Dev Lead", url: "#" },
+                  { name: "Stevens", handle: "Alumnus", url: "#" },
                 ].map((social, index) => (
                   <motion.div
                     key={social.name}
