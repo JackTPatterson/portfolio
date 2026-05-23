@@ -115,8 +115,8 @@ export default function Home() {
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-sm text-muted-foreground">
                   <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-muted-foreground/40 rounded-full"></div>
-                    Not open to opportunities
+                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    Open to opportunities
                   </div>
                   <div>Long Island, NY</div>
                 </div>
@@ -341,7 +341,7 @@ export default function Home() {
 
               <div className="space-y-6">
                 <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed">
-                  Not currently open to new opportunities, but always happy to chat about technology, design, and what I'm building.
+                  Always interested in new opportunities, collaborations, and conversations about technology and design.
                 </p>
 
                 <div className="space-y-4">
