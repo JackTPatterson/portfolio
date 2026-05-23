@@ -130,6 +130,25 @@ export const experiences: Experience[] = [
 		tech: ['UI/UX', 'Git', 'Web Deployment', 'Teaching'],
 		dateRange: '2024',
 		location: 'Hoboken, NJ',
+		sections: [
+			{
+				heading: 'Curriculum & Instruction',
+				items: [
+					'Designed and presented lessons on UI/UX design fundamentals, including layout, typography, and visual hierarchy',
+					'Walked students through practical git workflows — branching, committing, resolving merge conflicts, and collaborating via pull requests',
+					'Taught web app deployment using modern hosting platforms, covering build pipelines, environment configuration, and production rollouts',
+					'Introduced domain management essentials: registrars, DNS records, name servers, and connecting custom domains to deployed sites',
+				],
+			},
+			{
+				heading: 'Student Support',
+				items: [
+					'Provided personalized one-on-one help during sessions and office hours to unblock students stuck on technical issues',
+					'Debugged student code alongside them, modeling diagnostic thinking rather than just handing over solutions',
+					'Clarified concepts in plain language for students newer to web development, meeting them at their own experience level',
+				],
+			},
+		],
 	},
 	{
 		slug: 'aventix',
