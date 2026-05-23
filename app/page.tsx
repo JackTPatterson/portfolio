@@ -118,7 +118,7 @@ export default function Home() {
                     <div className="w-2 h-2 bg-muted-foreground/40 rounded-full"></div>
                     Not open to opportunities
                   </div>
-                  <div>Hoboken, NJ</div>
+                  <div>Long Island, NY</div>
                 </div>
               </motion.div>
             </div>
