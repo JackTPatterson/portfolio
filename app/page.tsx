@@ -267,7 +267,7 @@ export default function Home() {
                     "Native iOS app delivering rich NHL stats, charts, and game-day data with smooth animations and a privacy-first design — no analytics, no tracking, all preferences stored on-device.",
                   date: "Jan 2024",
                   tech: "React Native, Expo, TypeScript, NHL Data",
-                    link: "https://github.com/JackTPatterson/Rinkside",
+                    link: "https://apps.apple.com/us/app/rinkside-hockey-stats/id6762891002",
                 },
                 {
                   title: "FRCS",
@@ -275,6 +275,7 @@ export default function Home() {
                     "Innovative online international crowd-sourced data collection platform designed for First Robotics Competitions, collecting thousands of submissions from 100+ countries.",
                   date: "Jan 2020",
                   tech: "Python, Django, JavaScript, SQLite",
+                  link: "https://github.com/JackTPatterson/FRCS",
                 },
               ].map((post, index) => (
                 <motion.article
