@@ -131,7 +131,7 @@ export default function Home() {
               <div className="space-y-4">
                 <div className="text-sm text-muted-foreground">CURRENTLY</div>
                 <div className="space-y-2">
-                  <div className="text-foreground">Software Engineer</div>
+                  <div className="text-foreground">AI-Driven Business Development Lead</div>
                   <div className="text-muted-foreground">@ Go!Foton</div>
                   <div className="text-xs text-muted-foreground">Present</div>
                 </div>
@@ -387,7 +387,7 @@ export default function Home() {
                   { name: "GitHub", handle: "Github", url: "#" },
                   { name: "LinkedIn", handle: "LinkedIn", url: "#" },
                   { name: "Aventix", handle: "Co-Founder", url: "#" },
-                  { name: "Go!Foton", handle: "Software Engineer", url: "#" },
+                  { name: "Go!Foton", handle: "AI-Driven Biz Dev Lead", url: "#" },
                 ].map((social, index) => (
                   <motion.div
                     key={social.name}
