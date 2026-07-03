@@ -6,6 +6,8 @@ import { motion } from "framer-motion"
 import {ArrowUpRight} from "lucide-react";
 import { experiences } from "@/lib/experience"
 
+const MotionLink = motion.create ? motion.create(Link) : motion(Link)
+
 export default function Home() {
   const [isDark, setIsDark] = useState(true)
   const [activeSection, setActiveSection] = useState("")
@@ -167,10 +169,8 @@ export default function Home() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
         >
-          <motion.a
-            href="https://services.jpdigital.studio"
-            target="_blank"
-            rel="noopener noreferrer"
+          <MotionLink
+            href="/services"
             className="group flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 p-6 sm:p-8 border border-border rounded-lg hover:border-muted-foreground/50 hover:shadow-lg transition-colors duration-300"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -192,7 +192,7 @@ export default function Home() {
               View services & pricing
               <ArrowUpRight size={18} className="transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
             </div>
-          </motion.a>
+          </MotionLink>
         </motion.section>
 
         <motion.section
