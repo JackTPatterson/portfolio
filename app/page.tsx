@@ -55,7 +55,7 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground relative">
       <nav className="fixed left-8 top-1/2 -translate-y-1/2 z-10 hidden lg:block">
         <div className="flex flex-col gap-4">
-          {["intro", "work", "projects", "connect"].map((section, index) => {
+          {["intro", "services", "work", "projects", "connect"].map((section, index) => {
                return <motion.button
                   key={section}
                   initial={{ opacity: 0, filter: "blur(10px)" }}
@@ -158,9 +158,47 @@ export default function Home() {
         </motion.header>
 
         <motion.section
-          id="work"
+          id="services"
           /*@ts-ignore*/
           ref={(el) => (sectionsRef.current[1] = el)}
+          className="py-16 sm:py-24"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <motion.a
+            href="https://services.jpdigital.studio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 p-6 sm:p-8 border border-border rounded-lg hover:border-muted-foreground/50 hover:shadow-lg transition-colors duration-300"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            whileHover={{ y: -4 }}
+          >
+            <div className="space-y-2">
+              <div className="text-sm text-muted-foreground tracking-wider">JPDIGITAL / AGENCY</div>
+              <h2 className="text-2xl sm:text-3xl font-light">
+                AI automation & web design, <span className="text-muted-foreground">for hire</span>
+              </h2>
+              <p className="text-muted-foreground leading-relaxed max-w-lg">
+                Missed-call recovery, AI receptionists, Google review agents, and high-performance
+                websites — flat monthly pricing, no long-term contracts.
+              </p>
+            </div>
+            <div className="flex items-center gap-2 text-base sm:text-lg text-foreground group-hover:text-muted-foreground transition-colors duration-300 whitespace-nowrap">
+              View services & pricing
+              <ArrowUpRight size={18} className="transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+            </div>
+          </motion.a>
+        </motion.section>
+
+        <motion.section
+          id="work"
+          /*@ts-ignore*/
+          ref={(el) => (sectionsRef.current[2] = el)}
           className="min-h-screen py-20 sm:py-32"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -233,7 +271,7 @@ export default function Home() {
         <motion.section
           id="projects"
           /*@ts-ignore*/
-          ref={(el) => (sectionsRef.current[2] = el)}
+          ref={(el) => (sectionsRef.current[3] = el)}
           className="min-h-screen py-20 sm:py-32"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -323,7 +361,7 @@ export default function Home() {
         <motion.section
           id="connect"
           /*@ts-ignore*/
-          ref={(el) => (sectionsRef.current[3] = el)}
+          ref={(el) => (sectionsRef.current[4] = el)}
           className="py-20 sm:py-32"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
