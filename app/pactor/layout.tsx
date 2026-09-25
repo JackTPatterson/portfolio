@@ -48,7 +48,7 @@ export default function PactorLayout({
       <footer className="border-t border-border mt-24">
         <div className="max-w-3xl mx-auto px-6 sm:px-8 py-8 text-xs text-muted-foreground flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
           <div>© {new Date().getFullYear()} Pactor</div>
-          <Link href="/" className="hover:text-foreground transition-colors">
+          <Link href="/portfolio" className="hover:text-foreground transition-colors">
             ← jackpatterson.com
           </Link>
         </div>
