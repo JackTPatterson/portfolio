@@ -40,6 +40,13 @@ export default function LocklandiaPrivacy() {
           app deletes them.
         </p>
         <p>
+          If you save a place, its location and the size of its circle stay
+          on your phone. iOS watches for you arriving and leaving and tells
+          the app only that, and Locklandia never records or sends where you
+          are. Places need location access set to Always, which you can turn
+          off in iPhone Settings at any time.
+        </p>
+        <p>
           If you use a keyholder, the shared code is generated on your device
           and handed to them directly. The secret behind it is never uploaded,
           so we cannot generate your codes and cannot unlock your blocks.
@@ -96,9 +103,9 @@ export default function LocklandiaPrivacy() {
           </li>
           <li>
             <strong>Your devices.</strong> An install identifier for each
-            device and, if you allow notifications, its push token. When you
-            pair a Mac, we store which block is running (its name, symbol,
-            strictness and times) so your other device can show it.
+            device and, if you allow notifications, its push token. While a
+            block runs, we store which setup it is and when it ends, so friends
+            joining you share the same clock.
           </li>
           <li>
             <strong>Account sync.</strong> If you turn it on, a copy of your app
