@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+<title>Pumped Ducks App — Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.shopify.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0b; --surface:#141416; --surface2:#1c1c1f; --surface3:#26262a;
+  --line:rgba(255,255,255,.08); --text:#f5f5f6; --muted:#9b9ba3; --dim:#6b6b73;
+  --accent:#f4f4f5; --accent-ink:#0a0a0b; --accent-soft:rgba(244,244,245,.12);
+  --ok:#34d399; --radius:18px;
+  --display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%}
+body{background:#050506;color:var(--text);font:15px/1.4 Inter,system-ui,-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased;overflow:hidden}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+img{display:block}
+input{font:inherit;color:inherit}
+
+/* ---------- desktop stage ---------- */
+.stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(1200px 700px at 50% 35%,var(--accent-soft),transparent 60%),#050506}
+.phone{position:relative;width:390px;height:844px;flex:none;border-radius:58px;padding:12px;
+  background:linear-gradient(145deg,#2a2a2e,#0d0d0f);
+  box-shadow:0 0 0 1.5px #3a3a3f inset,0 40px 120px rgba(0,0,0,.7),0 0 0 1px #000;
+  transform-origin:center center}
+.phone .island{position:absolute;top:23px;left:50%;transform:translateX(-50%);width:120px;height:34px;
+  border-radius:20px;background:#000;z-index:50}
+.app{position:relative;width:100%;height:100%;border-radius:46px;overflow:hidden;background:var(--bg);isolation:isolate}
+.page-note{position:fixed;left:0;right:0;bottom:14px;text-align:center;font-size:11.5px;color:#6b6b73;letter-spacing:.01em}
+.page-note b{color:#9b9ba3;font-weight:600}
+
+.statusbar{position:absolute;top:0;left:0;right:0;height:54px;padding:18px 30px 0 34px;display:flex;
+  justify-content:space-between;align-items:flex-start;font-weight:600;font-size:15px;z-index:40;pointer-events:none}
+.statusbar .sb-r{display:flex;gap:6px;align-items:center;padding-top:2px}
+.statusbar svg{height:12px;width:auto;fill:currentColor}
+
+/* ---------- screens ---------- */
+.screens{position:absolute;inset:0}
+.screen{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;padding:0 0 calc(96px + var(--sab,0px));
+  opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .28s var(--ease),transform .28s var(--ease);
+  scrollbar-width:none;overscroll-behavior:contain}
+.screen::-webkit-scrollbar{display:none}
+.screen.active{opacity:1;transform:none;pointer-events:auto}
+.hdr{position:sticky;top:0;z-index:10;padding:62px 20px 12px;display:flex;align-items:center;gap:10px;
+  justify-content:space-between;background:var(--bg)}
+.hdr::after{content:"";position:absolute;left:0;right:0;top:100%;height:18px;pointer-events:none;
+  background:linear-gradient(var(--bg),rgba(10,10,11,0))}
+.hdr.col{display:block}
+.hdr-row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.hdr .cats{margin:12px -20px 0}
+.hdr h1{margin:0;font:800 30px/1 var(--display);letter-spacing:.01em;text-transform:uppercase}
+.wordmark{font:800 26px/1 var(--display);text-transform:uppercase;letter-spacing:.04em;max-width:250px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.icon-btn{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--surface2);position:relative;flex:none}
+.icon-btn svg{width:20px;height:20px}
+.icon-btn .dot{position:absolute;top:9px;right:10px;width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 2px var(--surface2)}
+svg{fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+
+.section{padding:0 20px;margin-top:26px}
+.sec-h{display:flex;justify-content:space-between;align-items:baseline;margin:0 20px 12px}
+.sec-h h2{margin:0;font:700 22px/1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.sec-h button{font-size:13px;color:var(--muted);font-weight:600}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* hero */
+.hero{position:relative;margin:4px 16px 0;height:430px;border-radius:26px;overflow:hidden;background:var(--surface)}
+.hero img{width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.82))}
+.hero .hero-c{position:absolute;left:20px;right:20px;bottom:20px;z-index:1}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  padding:6px 10px;border-radius:99px;background:var(--accent);color:var(--accent-ink)}
+.hero h3{margin:12px 0 14px;font:800 36px/.95 var(--display);text-transform:uppercase;color:#fff;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:48px;padding:0 22px;border-radius:14px;
+  font-weight:700;font-size:15px;background:var(--accent);color:var(--accent-ink);transition:transform .15s,filter .15s}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:rgba(255,255,255,.1);color:var(--text);backdrop-filter:blur(10px)}
+.btn.white{background:#fff;color:#000}
+.btn svg{width:18px;height:18px}
+
+/* countdown */
+.drop-card{margin:16px 16px 0;padding:18px;border-radius:22px;background:var(--surface);border:1px solid var(--line);position:relative;overflow:hidden}
+.drop-card::before{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;
+  background:radial-gradient(var(--accent-soft),transparent 70%)}
+.drop-top{display:flex;justify-content:space-between;align-items:center;position:relative}
+.drop-when{font-weight:600;margin-top:4px}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px;position:relative}
+.cd div{background:var(--surface2);border-radius:14px;padding:10px 0 8px;text-align:center}
+.cd b{display:block;font:800 30px/1 var(--display);font-variant-numeric:tabular-nums}
+.cd span{font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+.pill-btn{height:34px;padding:0 14px;border-radius:99px;background:var(--surface2);font-size:13px;font-weight:700;display:inline-flex;align-items:center;gap:6px;transition:background .2s,color .2s}
+.pill-btn svg{width:15px;height:15px}
+.pill-btn.on{background:var(--accent);color:var(--accent-ink)}
+
+/* rails + cards */
+.rail{display:flex;gap:12px;overflow-x:auto;padding:0 20px;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-padding:0 20px}
+.rail::-webkit-scrollbar{display:none}
+.rail .pcard{width:150px;flex:none;scroll-snap-align:start}
+.pcard{text-align:left;display:block;width:100%;min-width:0}
+.pimg{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:var(--surface2)}
+.pimg img{width:100%;height:100%;object-fit:cover;transition:transform .4s var(--ease)}
+.pcard:active .pimg img{transform:scale(1.04)}
+.pt{margin-top:9px;font-size:13px;font-weight:600;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pp{margin-top:3px;font-size:13px;color:var(--muted);font-weight:500}
+.pp s{color:var(--dim);margin-left:4px}
+.pp .sale{color:var(--accent)}
+.badge{position:absolute;left:8px;top:8px;max-width:calc(100% - 56px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  padding:5px 8px;border-radius:8px;background:rgba(0,0,0,.62);color:#fff;backdrop-filter:blur(6px)}
+.badge.acc{background:var(--accent);color:var(--accent-ink)}
+.heart{position:absolute;right:8px;top:8px;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;
+  background:rgba(0,0,0,.45);backdrop-filter:blur(6px);color:#fff;transition:transform .2s}
+.heart svg{width:16px;height:16px}
+.heart.on svg{fill:var(--accent);stroke:var(--accent)}
+.heart:active{transform:scale(.85)}
+.soldout .pimg img{opacity:.45;filter:grayscale(.6)}
+
+.cats{display:flex;gap:8px;overflow-x:auto;padding:0 20px;scrollbar-width:none}
+.cats::-webkit-scrollbar{display:none}
+.chip{flex:none;height:36px;padding:0 15px;border-radius:99px;background:var(--surface2);font-size:13px;font-weight:600;
+  white-space:nowrap;transition:background .2s,color .2s;border:1px solid transparent}
+.chip.on{background:var(--accent);color:var(--accent-ink)}
+.chip small{opacity:.55;margin-left:4px;font-weight:600}
+
+/* shop */
+.search{flex:1;min-width:0;height:44px;border-radius:14px;background:var(--surface2);display:flex;align-items:center;gap:10px;padding:0 14px;color:var(--muted)}
+.search svg{width:18px;height:18px;flex:none}
+.search input{flex:1;min-width:0;background:none;border:0;outline:0;color:var(--text)}
+.search input::placeholder{color:var(--dim)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 12px;padding:4px 20px 0}
+.count{margin:10px 20px 10px;font-size:12px;color:var(--muted);font-weight:500}
+.empty{padding:50px 30px;text-align:center;color:var(--muted)}
+.empty svg{width:40px;height:40px;margin:0 auto 12px;display:block;color:var(--dim)}
+.empty b{display:block;color:var(--text);font-size:17px;margin-bottom:6px}
+
+/* sheet */
+.scrim{position:absolute;inset:0;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .3s;z-index:60}
+.scrim.on{opacity:1;pointer-events:auto}
+.sheet{position:absolute;left:0;right:0;bottom:0;top:62px;z-index:61;background:var(--bg);border-radius:28px 28px 0 0;
+  transform:translateY(102%);transition:transform .42s var(--ease);display:flex;flex-direction:column;overflow:hidden;
+  box-shadow:0 -10px 40px rgba(0,0,0,.5)}
+.sheet.on{transform:none}
+.sheet-scroll{flex:1;overflow-y:auto;scrollbar-width:none;overscroll-behavior:contain}
+.sheet-scroll::-webkit-scrollbar{display:none}
+.grab{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:38px;height:5px;border-radius:3px;background:rgba(255,255,255,.35);z-index:3}
+.sheet .close{position:absolute;top:16px;right:16px;z-index:3;background:rgba(0,0,0,.5);color:#fff;backdrop-filter:blur(8px)}
+.carousel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;height:min(92vw,350px);background:var(--surface2)}
+.carousel::-webkit-scrollbar{display:none}
+.carousel img{flex:none;width:100%;height:100%;object-fit:cover;scroll-snap-align:center}
+.dots{display:flex;gap:6px;justify-content:center;margin-top:-22px;position:relative;z-index:2;height:22px}
+.dots i{width:6px;height:6px;border-radius:3px;background:rgba(255,255,255,.45);transition:width .25s,background .25s}
+.dots i.on{width:18px;background:#fff}
+.sb{padding:18px 20px 20px}
+.sb h2{margin:6px 0 6px;font:800 27px/1 var(--display);text-transform:uppercase}
+.price{font-size:18px;font-weight:700}
+.price s{color:var(--dim);font-weight:500;margin-left:8px;font-size:15px}
+.size-h{display:flex;justify-content:space-between;align-items:baseline;margin:22px 0 10px}
+.size-h b{font-size:14px}
+.size-h span{font-size:12px;color:var(--muted)}
+.sizes{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.size{position:relative;height:48px;border-radius:12px;background:var(--surface2);font-weight:700;font-size:14px;
+  border:1.5px solid transparent;transition:border-color .15s,background .15s;padding:0 4px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.size.sel{border-color:var(--accent);background:var(--accent-soft)}
+.size.out{color:var(--dim);background:var(--surface);border:1.5px dashed rgba(255,255,255,.12)}
+.size.out .lbl{text-decoration:line-through}
+.size .bell{position:absolute;right:4px;top:4px;width:14px;height:14px;color:var(--dim)}
+.size.out.alert{border:1.5px solid var(--accent);color:var(--text)}
+.size.out.alert .bell{color:var(--accent);fill:var(--accent)}
+.hint{margin-top:10px;font-size:12px;color:var(--muted);display:flex;gap:8px;align-items:flex-start}
+.hint svg{width:14px;height:14px;flex:none;margin-top:1px}
+.desc{margin-top:22px;color:var(--muted);font-size:14px;line-height:1.55}
+.sheet-cta{display:flex;gap:10px;padding:12px 20px calc(16px + var(--sab,0px));border-top:1px solid var(--line);background:var(--bg)}
+.sheet-cta .btn{flex:1}
+.sq{width:52px;height:48px;border-radius:14px;background:var(--surface2);display:grid;place-items:center;flex:none;transition:transform .15s}
+.sq svg{width:22px;height:22px}
+.sq.on svg{fill:var(--accent);stroke:var(--accent)}
+.sq:active{transform:scale(.9)}
+
+/* drops */
+.upcoming{position:relative;margin:4px 16px 0;border-radius:26px;overflow:hidden;min-height:400px;background:#111;display:flex;flex-direction:column;justify-content:flex-end}
+.upcoming .collage{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:2px;filter:blur(14px) brightness(.55) saturate(1.2);transform:scale(1.15)}
+.upcoming .collage img{width:100%;height:100%;object-fit:cover}
+.upcoming .lock{position:absolute;top:22px;left:50%;transform:translateX(-50%);width:56px;height:56px;border-radius:50%;
+  background:rgba(255,255,255,.12);backdrop-filter:blur(10px);display:grid;place-items:center;color:#fff}
+.upcoming .lock svg{width:24px;height:24px}
+.upcoming .uc{position:relative;padding:20px;color:#fff}
+.upcoming h3{margin:10px 0 2px;font:800 40px/.95 var(--display);text-transform:uppercase}
+.upcoming .cd div{background:rgba(255,255,255,.1);backdrop-filter:blur(10px)}
+.upcoming .cd span{color:rgba(255,255,255,.65)}
+.members{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;padding:7px 12px 7px 9px;border-radius:99px;
+  background:rgba(255,255,255,.14);backdrop-filter:blur(10px);color:#fff;border:1px solid rgba(255,255,255,.18)}
+.members i{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:var(--accent-ink)}
+.members i svg{width:12px;height:12px;stroke-width:2.6}
+.uc-row{display:flex;gap:10px;margin-top:16px}
+.uc-row .btn{flex:1}
+
+.lockscreen{margin:0 16px;border-radius:26px;padding:26px 14px 16px;position:relative;overflow:hidden;
+  background:linear-gradient(160deg,var(--accent-soft),transparent 60%),linear-gradient(200deg,#23232a,#0e0e11)}
+.ls-time{text-align:center;color:#fff}
+.ls-time small{display:block;font-size:14px;font-weight:600;opacity:.8}
+.ls-time b{display:block;font-size:64px;font-weight:700;letter-spacing:-.02em;line-height:1.05}
+.notif{display:flex;gap:10px;padding:12px;border-radius:20px;margin-top:8px;background:rgba(40,40,46,.72);backdrop-filter:blur(20px);color:#fff;
+  animation:pop .6s var(--ease) both}
+.notif:nth-child(3){animation-delay:.15s;transform-origin:top}
+@keyframes pop{from{opacity:0;transform:translateY(-8px) scale(.97)}to{opacity:1;transform:none}}
+.appicon{width:38px;height:38px;border-radius:9px;flex:none;display:grid;place-items:center;background:var(--accent);color:var(--accent-ink);
+  font:800 17px/1 var(--display);letter-spacing:.02em}
+.notif .nb{flex:1;min-width:0}
+.notif .nt{display:flex;justify-content:space-between;font-size:13px}
+.notif .nt b{font-weight:700}
+.notif .nt span{opacity:.55;font-size:12px}
+.notif p{margin:1px 0 0;font-size:13px;opacity:.85;line-height:1.3}
+.notif img{width:38px;height:38px;border-radius:8px;object-fit:cover;flex:none}
+
+.past{margin:0 16px;display:flex;flex-direction:column;gap:10px}
+.past-row{display:flex;align-items:center;gap:12px;padding:12px;border-radius:18px;background:var(--surface);width:100%;text-align:left}
+.stack{display:flex;flex:none}
+.stack img{width:44px;height:56px;border-radius:9px;object-fit:cover;border:2px solid var(--surface);margin-left:-14px}
+.stack img:first-child{margin-left:0}
+.past-row .pr{flex:1;min-width:0}
+.past-row b{display:block;font-size:14px}
+.past-row span{font-size:12px;color:var(--muted)}
+.past-row svg{width:18px;height:18px;color:var(--dim);flex:none}
+
+/* wishlist */
+.wl{margin:0 16px;display:flex;flex-direction:column;gap:12px}
+.wl-item{background:var(--surface);border-radius:20px;padding:12px;animation:pop .35s var(--ease) both}
+.wl-top{display:flex;gap:12px}
+.wl-top img{width:76px;height:95px;border-radius:12px;object-fit:cover;flex:none;cursor:pointer}
+.wl-info{flex:1;min-width:0}
+.wl-info b{display:block;font-size:14px;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.wl-info .pp{margin-top:4px}
+.stock{margin-top:6px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:6px}
+.stock i{width:7px;height:7px;border-radius:50%;background:var(--ok)}
+.stock.warn i{background:#f59e0b}
+.stock.bad i{background:#ef4444}
+.wl-x{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:var(--muted);flex:none}
+.wl-x svg{width:16px;height:16px}
+.wl-sizes{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.wl-sizes .eyebrow{font-size:10px;margin-bottom:8px;display:block}
+.alert-row{display:flex;flex-wrap:wrap;gap:6px}
+.al{height:32px;padding:0 10px;border-radius:10px;background:var(--surface2);font-size:12px;font-weight:700;display:inline-flex;align-items:center;gap:6px;transition:background .2s,color .2s}
+.al svg{width:13px;height:13px}
+.al.instock{background:transparent;border:1px solid var(--line);color:var(--muted);cursor:default}
+.al.on{background:var(--accent);color:var(--accent-ink)}
+.al.on svg{fill:currentColor}
+
+/* profile */
+.me{display:flex;align-items:center;gap:14px;margin:4px 20px 0}
+.avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#333);display:grid;place-items:center;
+  font:800 22px/1 var(--display);color:var(--accent-ink)}
+.me b{display:block;font-size:19px}
+.me span{font-size:13px;color:var(--muted)}
+.tier{margin:18px 16px 0;border-radius:24px;padding:20px;position:relative;overflow:hidden;color:#fff;
+  background:linear-gradient(135deg,#2b2b31 0%,#131316 60%);border:1px solid rgba(255,255,255,.1)}
+.tier::before{content:"";position:absolute;inset:0;background:radial-gradient(260px 160px at 90% 0%,var(--accent-glow,rgba(255,255,255,.18)),transparent 70%)}
+.tier::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.07) 45%,transparent 55%);
+  animation:sheen 4.5s ease-in-out infinite}
+@keyframes sheen{0%,60%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.tier>*{position:relative;z-index:1}
+.tier-top{display:flex;justify-content:space-between;align-items:flex-start}
+.tier-name{font:800 26px/1 var(--display);text-transform:uppercase;margin-top:6px}
+.tier .eyebrow{color:rgba(255,255,255,.6)}
+.pts{text-align:right}
+.pts b{display:block;font:800 34px/1 var(--display)}
+.pts span{font-size:11px;color:rgba(255,255,255,.6);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.bar{height:6px;border-radius:3px;background:rgba(255,255,255,.14);margin-top:22px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--accent-bar,var(--accent));border-radius:3px;transition:width 1.2s var(--ease)}
+.bar-l{display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.65);margin-top:8px}
+.perks{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
+.perks span{font-size:11px;font-weight:700;padding:6px 10px;border-radius:99px;background:rgba(255,255,255,.1)}
+.order{margin:0 16px;background:var(--surface);border-radius:22px;padding:16px}
+.order-top{display:flex;justify-content:space-between;align-items:center}
+.order-top b{font-size:15px}
+.order-top span{font-size:12px;color:var(--muted)}
+.eta{font:800 24px/1 var(--display);text-transform:uppercase;margin-top:14px}
+.eta small{display:block;font:600 12px Inter,sans-serif;color:var(--muted);text-transform:none;margin-bottom:4px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:18px;position:relative}
+.steps::before{content:"";position:absolute;top:9px;left:12.5%;right:12.5%;height:3px;border-radius:2px;background:var(--surface3)}
+.steps .prog{position:absolute;top:9px;left:12.5%;height:3px;border-radius:2px;background:var(--accent);width:0;transition:width 1.2s var(--ease) .2s}
+.step{text-align:center;font-size:11px;color:var(--muted);font-weight:600;position:relative}
+.step i{width:21px;height:21px;border-radius:50%;background:var(--surface3);display:grid;place-items:center;margin:0 auto 6px;border:3px solid var(--surface)}
+.step i svg{width:11px;height:11px;stroke-width:3}
+.step.done i{background:var(--accent);color:var(--accent-ink)}
+.step.done{color:var(--text)}
+.step.cur i{box-shadow:0 0 0 5px var(--accent-soft)}
+.order-items{display:flex;gap:8px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);align-items:center}
+.order-items img{width:44px;height:55px;border-radius:9px;object-fit:cover}
+.order-items span{font-size:12px;color:var(--muted);margin-left:auto;text-align:right}
+.list{margin:0 16px;background:var(--surface);border-radius:20px;overflow:hidden}
+.row{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line);width:100%;text-align:left}
+.row:last-child{border-bottom:0}
+.row .ri{width:34px;height:34px;border-radius:10px;background:var(--surface2);display:grid;place-items:center;flex:none}
+.row .ri svg{width:17px;height:17px}
+.row .rt{flex:1;min-width:0}
+.row .rt b{display:block;font-size:14px;font-weight:600}
+.row .rt span{font-size:12px;color:var(--muted)}
+.toggle{width:46px;height:28px;border-radius:14px;background:var(--surface3);position:relative;flex:none;transition:background .25s}
+.toggle::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:transform .25s var(--ease);box-shadow:0 2px 6px rgba(0,0,0,.3)}
+.toggle.on{background:var(--accent)}
+.toggle.on::after{transform:translateX(18px);background:var(--accent-knob,#fff)}
+
+.disclaimer{margin:34px 24px 0;text-align:center;font-size:11px;color:var(--dim);line-height:1.45}
+
+/* tab bar */
+.tabbar{position:absolute;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:repeat(5,1fr);
+  padding:8px 8px calc(24px + var(--sab,0px));background:rgba(10,10,11,.94);backdrop-filter:blur(24px) saturate(1.4);
+  -webkit-backdrop-filter:blur(24px) saturate(1.4);border-top:1px solid var(--line)}
+.tab{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 0;color:var(--dim);font-size:10.5px;font-weight:600;position:relative;transition:color .2s}
+.tab svg{width:24px;height:24px;transition:transform .25s var(--ease)}
+.tab.on{color:var(--text)}
+.tab.on svg{transform:translateY(-1px)}
+.tab.on::before{content:"";position:absolute;top:-9px;width:22px;height:3px;border-radius:0 0 3px 3px;background:var(--accent)}
+.tab .cnt{position:absolute;top:1px;left:calc(50% + 6px);min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--accent);
+  color:var(--accent-ink);font-size:10px;font-weight:800;display:grid;place-items:center;transition:transform .25s var(--ease)}
+.tab .cnt.bump{transform:scale(1.3)}
+.tab .cnt:empty{display:none}
+
+.toast{position:absolute;left:16px;right:16px;bottom:calc(96px + var(--sab,0px));z-index:80;padding:13px 16px;border-radius:16px;
+  background:#f5f5f6;color:#0a0a0b;font-size:14px;font-weight:600;display:flex;gap:10px;align-items:center;
+  box-shadow:0 12px 40px rgba(0,0,0,.45);transform:translateY(20px);opacity:0;pointer-events:none;transition:transform .35s var(--ease),opacity .35s}
+.toast.on{transform:none;opacity:1}
+.toast i{width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;flex:none}
+.toast i svg{width:14px;height:14px;stroke-width:2.6}
+.sheet.on ~ .toast{bottom:calc(88px + var(--sab,0px))}
+
+/* ---------- mobile: full screen, no frame ---------- */
+@media (max-width:520px){
+  body{background:var(--bg)}
+  .stage{background:var(--bg)}
+  .phone{width:100%;height:100%;border-radius:0;padding:0;background:none;box-shadow:none;transform:none!important}
+  .phone .island,.statusbar,.page-note{display:none}
+  .app{border-radius:0}
+  :root{--sab:env(safe-area-inset-bottom,0px)}
+  .hdr{padding-top:calc(env(safe-area-inset-top,0px) + 12px)}
+  .sheet{top:calc(env(safe-area-inset-top,0px) + 12px)}
+  .tabbar{padding-bottom:calc(10px + var(--sab,0px))}
+  .toast{bottom:calc(80px + var(--sab,0px))}
+}
+@media (min-width:521px){ .disclaimer{display:none} }
+@media (prefers-reduced-motion:reduce){ *{animation:none!important;transition:none!important} }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="phone" id="phone">
+    <div class="island"></div>
+    <div class="app" id="app">
+      <div class="statusbar"><span id="clock">9:41</span><span class="sb-r">
+        <svg viewBox="0 0 18 12" style="stroke:none"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+        <svg viewBox="0 0 16 12" style="stroke:none"><path d="M8 2.2c2.3 0 4.4.9 6 2.4l1.1-1.2A10.2 10.2 0 0 0 8 .6C5.3.6 2.8 1.6.9 3.4L2 4.6a8.6 8.6 0 0 1 6-2.4Zm0 3.3c1.4 0 2.7.5 3.7 1.4l1.1-1.2A7.2 7.2 0 0 0 8 3.9c-1.8 0-3.5.7-4.8 1.8l1.1 1.2c1-.9 2.3-1.4 3.7-1.4Zm0 3.2c.6 0 1.1.2 1.5.6L8 11 6.5 9.3c.4-.4.9-.6 1.5-.6Z"/></svg>
+        <svg viewBox="0 0 27 12" style="stroke:none"><rect x=".5" y=".5" width="22" height="11" rx="3" fill="none" stroke="currentColor" stroke-opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.8"/><path d="M24 4v4c.8-.3 1.5-1 1.5-2S24.8 4.3 24 4Z" opacity=".4"/></svg>
+      </span></div>
+      <main class="screens">
+        <section class="screen active" id="s-home" data-screen="home"></section>
+        <section class="screen" id="s-shop" data-screen="shop"></section>
+        <section class="screen" id="s-drops" data-screen="drops"></section>
+        <section class="screen" id="s-wish" data-screen="wish"></section>
+        <section class="screen" id="s-profile" data-screen="profile"></section>
+      </main>
+      <nav class="tabbar" id="tabbar"></nav>
+      <div class="scrim" id="scrim"></div>
+      <div class="sheet" id="sheet"></div>
+      <div class="toast" id="toast"><i></i><span></span></div>
+    </div>
+  </div>
+  <div class="page-note"><b>Concept prototype by JPX Software.</b> Not affiliated with or endorsed by Pumped Ducks.</div>
+</div>
+<script>
+const DATA = {"config":{"name":"Pumped Ducks","slug":"pumped-ducks","domain":"pumpedducks.com","accent":"#e77e2a","currency":"$","dropDate":null,"builtAt":"2026-09-25"},"products":[{"id":10795818582308,"t":"Tiki Bar Oversized T-Shirt — Black","h":"tiki-black","c":"Tees","p":39.0,"cp":0,"img":["https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_5519-2.jpg?v=1788800510&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_6099-2.jpg?v=1789433288&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_5534.jpg?v=1788800941&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_6095-3.jpg?v=1789433288&width=720"],"s":[["S",1],["M",1],["L",1],["XL",1]],"av":1,"so":0,"pub":"2026-09-11T12:11:02-04:00","d":"across the shoulders and traps, fall naturally through the torso, and keep its shape without awkwardly flaring out at the front or back. The relaxed sleeves and roomy body give it an intentionally oversized silhouette without feeling sloppy. Made from 100% cotton at 250 GSM , the Tiki Bar Tee has a substantial, soft…"},{"id":10795755372836,"t":"Tiki Bar Oversized T-Shirt — Bone","h":"worth-a-shot-oversized-tee-copy","c":"Tees","p":39.0,"cp":0,"img":["https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_5482-2.jpg?v=1788799034&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_6087-3.jpg?v=1789432660&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_5470_463211a3-5c3b-457a-909f-5b87060e6735.jpg?v=1788798585&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_6178-4.jpg?v=1789432758&width=720"],"s":[["S",1],["M",1],["L",1],["XL",1]],"av":1,"so":0,"pub":"2026-09-11T12:11:00-04:00","d":"across the shoulders and traps, fall naturally through the torso, and keep its shape without awkwardly flaring out at the front or back. The relaxed sleeves and roomy body give it an intentionally oversized silhouette without feeling sloppy. Made from 100% cotton at 250 GSM , the Tiki Bar Tee has a substantial, soft…"},{"id":10783999328548,"t":"Worth A Shot Oversized T-Shirt — Bone","h":"worth-a-shot-oversized-tee","c":"Tees","p":39.0,"cp":0,"img":["https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_5461_0625b6b3-35c7-482e-9363-6981677d40f0.jpg?v=1788798042&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_6186-2.jpg?v=1789420922&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_5470_463211a3-5c3b-457a-909f-5b87060e6735.jpg?v=1788798585&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_6084-5_e3b2acb4-c12e-4b30-8929-6f7c63a5fce0.jpg?v=1789424349&width=720"],"s":[["S",1],["M",1],["L",1],["XL",1]],"av":1,"so":0,"pub":"2026-09-11T12:10:59-04:00","d":"across the shoulders and traps, fall naturally through the torso, and keep its shape without awkwardly flaring out at the front or back. The relaxed sleeves and roomy body give it an intentionally oversized silhouette without feeling sloppy. Made from 100% cotton at 250 GSM , the Tee has a substantial, soft feel built…"},{"id":10783942803748,"t":"Original Logo Mesh Shorts","h":"pd-logo-mesh-shorts","c":"Shorts","p":45.0,"cp":0,"img":["https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_5516-2.jpg?v=1788798231&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_6479-4.jpg?v=1789409670&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_6448-8.jpg?v=1789411197&width=720"],"s":[["S",1],["M",1],["L",1],["XL",1]],"av":1,"so":0,"pub":"2026-09-11T12:10:57-04:00","d":"A lightweight everyday short built for comfort, movement, and a clean athletic fit. Made from a stretch-durable mesh blend , the fabric feels substantial while staying breathable and flexible. The 5\" inseam sits above the knee to show more of the leg and create a sharper athletic silhouette , while giving you plenty…"},{"id":10782802477348,"t":"PD Mesh Shorts","h":"pd-mesh-shorts","c":"Shorts","p":45.0,"cp":0,"img":["https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_5511-2.jpg?v=1788799903&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_6504.jpg?v=1789414449&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_6500-2.jpg?v=1789414965&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_6509-2.jpg?v=1789416050&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/IMG_5571_265ecb30-8e90-4be5-9a69-d5ab7fe9e373.jpg?v=1788822596&width=720"],"s":[["S",1],["M",1],["L",1],["XL",1]],"av":1,"so":0,"pub":"2026-09-11T12:10:55-04:00","d":"A lightweight everyday short built for comfort, movement, and a clean athletic fit. Made from a stretch-durable mesh blend , the fabric feels substantial while staying breathable and flexible. The 5\" inseam sits above the knee to show more of the leg and create a sharper athletic silhouette , while giving you plenty…"},{"id":9012525367588,"t":"Forgotten Favourites","h":"002","c":"Other","p":44.99,"cp":59.99,"img":["https://cdn.shopify.com/s/files/1/0729/9963/3188/files/PDB1_8179ba51-9ce2-461a-aa69-2641c533f741.heic?v=1710249578&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/PDB2.heic?v=1710249578&width=720"],"s":[["S",1],["M",1],["L",0],["XL",0]],"av":1,"so":1,"pub":"2026-05-01T11:02:42-04:00","d":"002"},{"id":9883706491172,"t":"Pre-Bar Tee - Baby Pink","h":"006","c":"Tees","p":29.0,"cp":46.0,"img":["https://cdn.shopify.com/s/files/1/0729/9963/3188/files/8.png?v=1767638403&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/9.png?v=1767638402&width=720"],"s":[["S",1],["M",1],["L",1],["XL",1]],"av":1,"so":0,"pub":"2024-09-29T23:34:08-04:00","d":"Pre-Bar Tee (Light - Pink). Unisex Fit Large Print on Back Print on Front Chest Fabric: Constructed from 100% cotton. This made-to-order item will be shipped in 5 -8 business days."},{"id":9883704983844,"t":"Pre-Bar Tee - Black","h":"005","c":"Tees","p":29.0,"cp":46.0,"img":["https://cdn.shopify.com/s/files/1/0729/9963/3188/files/7.png?v=1767638526&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/4.png?v=1767638544&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/PD9-29-24-236_e5710349-9605-4546-ac6a-f974aa013c18.jpg?v=1728095301&width=720"],"s":[["S",1],["M",1],["L",1],["XL",1]],"av":1,"so":0,"pub":"2024-09-29T23:29:03-04:00","d":"Pre-Bar Tee (Black). Unisex Fit Large Print on Back Print on Front Chest Fabric: Constructed from 100% cotton. This made-to-order item will be shipped in 5 -8 business days."},{"id":9883703279908,"t":"Protein Paradise Tee - Teal","h":"004","c":"Tees","p":29.0,"cp":46.0,"img":["https://cdn.shopify.com/s/files/1/0729/9963/3188/files/5.png?v=1770149135&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/6.png?v=1770149135&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/GeneratedImageFebruary03_2026-2_22PM_ebcff026-fe90-4a73-a075-b3f4f8a4ed82.jpg?v=1770149135&width=720"],"s":[["S",0],["M",0],["L",0],["XL",1]],"av":1,"so":1,"pub":"2024-09-29T23:17:40-04:00","d":"A relaxed-fit tee crafted from heavyweight, premium cotton for a structured yet comfortable feel. Designed with intention, this shirt drapes cleanly through the torso without riding up in the front or back, while sitting naturally on the shoulders and traps with a smooth, irritation-free neckline. Every detail—from…"},{"id":9883683160356,"t":"Protein Paradise Tee - Black","h":"003","c":"Tees","p":29.0,"cp":46.0,"img":["https://cdn.shopify.com/s/files/1/0729/9963/3188/files/3.png?v=1767638772&width=720","https://cdn.shopify.com/s/files/1/0729/9963/3188/files/4_5061e15b-6211-481f-90e5-8a4c258912b0.png?v=1767638772&width=720"],"s":[["S",0],["M",1],["L",1],["XL",1]],"av":1,"so":1,"pub":"2024-09-29T22:34:52-04:00","d":"Protein Paradise Tee (Black) Unisex Fit Large Print on Back Print on Front Chest Fabric: Constructed from 100% cotton. This made-to-order item will be shipped in 5 -8 business days."}]};
+(function(){
+"use strict";
+const C = DATA.config, P = DATA.products, BY = new Map(P.map(p => [p.id, p]));
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const money = n => C.currency + (n % 1 ? n.toFixed(2) : n.toFixed(0));
+const brand = esc(C.name);
+const initials = C.name.replace(/[^A-Za-z0-9 ]/g, "").split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0]).join("").toUpperCase() || "A";
+
+/* ---------- theme ---------- */
+(function theme(){
+  const root = document.documentElement.style;
+  if (!C.accent) return; // neutral theme defaults in CSS
+  let h = C.accent.replace("#", "");
+  if (h.length === 3) h = h.split("").map(c => c + c).join("");
+  const [r, g, b] = [0, 2, 4].map(i => parseInt(h.substr(i, 2), 16));
+  const lum = ch => { ch /= 255; return ch <= .03928 ? ch / 12.92 : Math.pow((ch + .055) / 1.055, 2.4); };
+  const L = .2126 * lum(r) + .7152 * lum(g) + .0722 * lum(b);
+  root.setProperty("--accent", "#" + h);
+  root.setProperty("--accent-ink", L > .45 ? "#0a0a0b" : "#ffffff");
+  root.setProperty("--accent-soft", `rgba(${r},${g},${b},.18)`);
+  root.setProperty("--accent-glow", `rgba(${r},${g},${b},.45)`);
+})();
+
+/* ---------- icons ---------- */
+const I = {
+  home:'<svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>',
+  shop:'<svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12.2a1 1 0 0 1-1 .8H7a1 1 0 0 1-1-.8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>',
+  drops:'<svg viewBox="0 0 24 24"><path d="M12 21c-4 0-7-2.7-7-6.6 0-3.3 2.4-5.4 3.6-8.9.2-.6 1-.8 1.4-.2 1 1.4 1.4 2.9 1.4 4.2 1.2-.6 2-1.8 2.2-3 .1-.6.9-.8 1.3-.3C17.6 8.6 19 11.3 19 14.4 19 18.3 16 21 12 21Z"/></svg>',
+  heart:'<svg viewBox="0 0 24 24"><path d="M12 20.3S3.5 15.4 3.5 9.3A4.6 4.6 0 0 1 12 6.8a4.6 4.6 0 0 1 8.5 2.5c0 6.1-8.5 11-8.5 11Z"/></svg>',
+  user:'<svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>',
+  bell:'<svg viewBox="0 0 24 24"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>',
+  search:'<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>',
+  x:'<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>',
+  check:'<svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>',
+  lock:'<svg viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></svg>',
+  star:'<svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.4 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/></svg>',
+  chev:'<svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg>',
+  truck:'<svg viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></svg>',
+  bag:'<svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12.2a1 1 0 0 1-1 .8H7a1 1 0 0 1-1-.8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>',
+  gear:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg>',
+  spark:'<svg viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/></svg>',
+  pin:'<svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>'
+};
+
+/* ---------- state (in memory, mirrored to localStorage when available) ---------- */
+const KEY = "jpxdemo:" + C.slug;
+const S = { wish: [], alerts: {}, dropReminder: false, prefs: { drops: true, restock: true, orders: true, promo: false } };
+const restock = P.filter(p => p.so && p.s.some(s => !s[1]));
+const backSoon = restock.filter(p => p.av).concat(restock.filter(p => !p.av)).slice(0, 12);
+(function load(){
+  let saved = null;
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) {}
+  if (saved && typeof saved === "object") { Object.assign(S, saved); S.wish = S.wish.filter(id => BY.has(id)); return; }
+  // Seed a believable starting state: two saved items, one with a restock alert set.
+  const seed = [backSoon[0], P[0], P.find(p => p !== backSoon[0] && p !== P[0] && p.av)].filter(Boolean);
+  S.wish = [...new Set(seed.map(p => p.id))].slice(0, 3);
+  if (backSoon[0]) { const out = backSoon[0].s.find(s => !s[1]); if (out) S.alerts[backSoon[0].id] = [out[0]]; }
+})();
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+const isWished = id => S.wish.includes(id);
+const hasAlert = (id, size) => (S.alerts[id] || []).includes(size);
+
+/* ---------- drop date ---------- */
+function nextDrop(){
+  if (C.dropDate) { const d = new Date(C.dropDate); if (!isNaN(d)) return d; }
+  const d = new Date(); d.setHours(12, 0, 0, 0);
+  let add = (7 - d.getDay()) % 7;
+  if (add === 0 && Date.now() >= d.getTime()) add = 7;
+  d.setDate(d.getDate() + add);
+  return d;
+}
+const DROP = nextDrop();
+const dropLabel = DROP.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric" }) + " · " +
+  DROP.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" });
+const cdHTML = () => `<div class="cd" data-cd>${["Days","Hrs","Min","Sec"].map(l => `<div><b>00</b><span>${l}</span></div>`).join("")}</div>`;
+function tick(){
+  let ms = Math.max(0, DROP - Date.now());
+  const parts = [864e5, 36e5, 6e4, 1e3].map(u => { const v = Math.floor(ms / u); ms -= v * u; return v; });
+  document.querySelectorAll("[data-cd]").forEach(el => el.querySelectorAll("b").forEach((b, i) => {
+    const v = String(parts[i]).padStart(2, "0"); if (b.textContent !== v) b.textContent = v;
+  }));
+  const t = new Date(); $("#clock").textContent = t.getHours() % 12 + (t.getHours() % 12 ? 0 : 12) + ":" + String(t.getMinutes()).padStart(2, "0");
+}
+
+/* ---------- components ---------- */
+const priceHTML = p => p.cp ? `<span class="sale">${money(p.p)}</span><s>${money(p.cp)}</s>` : money(p.p);
+const outCount = p => p.s.filter(s => !s[1]).length;
+function card(p, opts = {}){
+  let badge = "";
+  if (!p.av) badge = `<span class="badge">Sold out</span>`;
+  else if (opts.restock && outCount(p)) badge = `<span class="badge acc">Restocking</span>`;
+  else if (opts.isNew) badge = `<span class="badge acc">New</span>`;
+  else if (p.cp) badge = `<span class="badge">Sale</span>`;
+  return `<button class="pcard ${p.av ? "" : "soldout"}" data-open="${p.id}">
+    <div class="pimg"><img loading="lazy" src="${esc(p.img[0])}" alt="">${badge}
+      <span class="heart ${isWished(p.id) ? "on" : ""}" data-wish="${p.id}" role="button" aria-label="Save">${I.heart}</span></div>
+    <div class="pt">${esc(p.t)}</div><div class="pp">${priceHTML(p)}</div></button>`;
+}
+const disclaimer = `<div class="disclaimer">Concept prototype by JPX Software.<br>Not affiliated with or endorsed by ${brand}.</div>`;
+
+/* categories for chips */
+const catCounts = {};
+P.forEach(p => catCounts[p.c] = (catCounts[p.c] || 0) + 1);
+const CATS = Object.entries(catCounts).sort((a, b) => b[1] - a[1]).slice(0, 9).map(e => e[0]);
+let shopCat = "All", shopQ = "";
+
+/* ---------- screens ---------- */
+function renderHome(){
+  const hero = P[0];
+  $("#s-home").innerHTML = `
+    <div class="hdr"><div class="wordmark">${brand}</div>
+      <button class="icon-btn" data-tab="drops" aria-label="Notifications">${I.bell}<span class="dot"></span></button></div>
+    <div class="hero" data-open="${hero.id}" role="button">
+      <img src="${esc(hero.img[0])}" alt="">
+      <div class="hero-c"><span class="tag">${I.spark.replace("<svg", '<svg style="width:12px;height:12px"')} Just dropped</span>
+        <h3>${esc(hero.t)}</h3>
+        <span class="btn white">Shop the drop ${I.chev.replace("<svg", '<svg style="width:16px;height:16px"')}</span></div>
+    </div>
+    <div class="drop-card">
+      <div class="drop-top"><div><div class="eyebrow">Next drop</div><div class="drop-when">${esc(dropLabel)}</div></div>
+        <button class="pill-btn ${S.dropReminder ? "on" : ""}" data-remind>${I.bell}<span>${S.dropReminder ? "Reminder set" : "Remind me"}</span></button></div>
+      ${cdHTML()}
+    </div>
+    <div style="margin-top:26px"><div class="sec-h"><h2>Latest drop</h2><button data-tab="shop">See all</button></div>
+      <div class="rail">${P.slice(0, 10).map(p => card(p, { isNew: true })).join("")}</div></div>
+    ${backSoon.length ? `<div style="margin-top:28px"><div class="sec-h"><h2>Back in stock soon</h2><button data-tab="wish">Alerts</button></div>
+      <div class="rail">${backSoon.slice(0, 10).map(p => card(p, { restock: true })).join("")}</div></div>` : ""}
+    <div style="margin-top:28px"><div class="sec-h"><h2>Shop by category</h2></div>
+      <div class="cats">${CATS.map(c => `<button class="chip" data-gocat="${esc(c)}">${esc(c)}</button>`).join("")}</div></div>
+    ${disclaimer}`;
+}
+
+function renderShop(){
+  const el = $("#s-shop");
+  if (!el.dataset.built) {
+    el.dataset.built = 1;
+    el.innerHTML = `<div class="hdr col"><div class="hdr-row"><label class="search">${I.search}<input id="q" type="search" placeholder="Search ${brand}" autocomplete="off"></label>
+      <button class="icon-btn" data-tab="wish" aria-label="Wishlist">${I.heart}</button></div>
+      <div class="cats" id="chips"></div></div><div class="count" id="count"></div><div class="grid" id="grid"></div><div id="shop-empty"></div>${disclaimer}`;
+    $("#q").addEventListener("input", e => { shopQ = e.target.value.trim().toLowerCase(); renderShop(); });
+  }
+  $("#chips").innerHTML = ["All", ...CATS].map(c =>
+    `<button class="chip ${c === shopCat ? "on" : ""}" data-chip="${esc(c)}">${esc(c)}<small>${c === "All" ? P.length : catCounts[c]}</small></button>`).join("");
+  const list = P.filter(p => (shopCat === "All" || p.c === shopCat) && (!shopQ || p.t.toLowerCase().includes(shopQ)));
+  $("#count").textContent = `${list.length} product${list.length === 1 ? "" : "s"}`;
+  $("#grid").innerHTML = list.map(p => card(p)).join("");
+  $("#shop-empty").innerHTML = list.length ? "" : `<div class="empty">${I.search}<b>Nothing found</b>Try another search or category.</div>`;
+}
+
+function dropGroups(){
+  const groups = new Map();
+  P.forEach(p => { const k = (p.pub || "").slice(0, 10); if (!k) return; (groups.get(k) || groups.set(k, []).get(k)).push(p); });
+  return [...groups.entries()].sort((a, b) => a[0] < b[0] ? 1 : -1).slice(0, 5);
+}
+function renderDrops(){
+  const teaser = P.slice(0, 4);
+  const alertItem = backSoon[0];
+  const alertSize = alertItem ? (S.alerts[alertItem.id] || [])[0] || (alertItem.s.find(s => !s[1]) || [""])[0] : "";
+  $("#s-drops").innerHTML = `
+    <div class="hdr"><h1>Drops</h1><button class="icon-btn" data-remind aria-label="Remind me">${I.bell}${S.dropReminder ? '<span class="dot"></span>' : ""}</button></div>
+    <div class="upcoming">
+      <div class="collage">${teaser.map(p => `<img src="${esc(p.img[0])}" alt="">`).join("")}</div>
+      <div class="lock">${I.lock}</div>
+      <div class="uc">
+        <span class="members"><i>${I.check}</i>Early access unlocked</span>
+        <h3>The next drop</h3>
+        <div style="opacity:.8;font-size:14px;font-weight:500">${esc(dropLabel)} · Members shop 1 hour early</div>
+        ${cdHTML()}
+        <div class="uc-row"><button class="btn ${S.dropReminder ? "" : "white"}" data-remind>${I.bell}<span>${S.dropReminder ? "You're on the list" : "Notify me"}</span></button></div>
+      </div>
+    </div>
+    <div style="margin-top:28px"><div class="sec-h"><h2>Drop day, on their lock screen</h2></div>
+      <div class="lockscreen">
+        <div class="ls-time"><small>${esc(DROP.toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" }))}</small>
+          <b>${esc(DROP.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" }).replace(/\s?[AP]M/i, ""))}</b></div>
+        <div class="notif"><div class="appicon">${esc(initials)}</div><div class="nb">
+          <div class="nt"><b>${brand}</b><span>now</span></div>
+          <p><b>🔥 The drop is live</b><br>Members get first access for 60 minutes. Your size is in stock.</p></div>
+          <img src="${esc(P[0].img[0])}" alt=""></div>
+        ${alertItem ? `<div class="notif"><div class="appicon">${esc(initials)}</div><div class="nb">
+          <div class="nt"><b>${brand}</b><span>2m ago</span></div>
+          <p><b>Back in stock${alertSize ? ": size " + esc(alertSize) : ""}</b><br>${esc(alertItem.t)} is back. Tap to grab it before it's gone.</p></div>
+          <img src="${esc(alertItem.img[0])}" alt=""></div>` : ""}
+      </div></div>
+    <div style="margin-top:28px"><div class="sec-h"><h2>Past drops</h2></div>
+      <div class="past">${dropGroups().map(([day, items]) => `
+        <button class="past-row" data-open="${items[0].id}">
+          <div class="stack">${items.slice(0, 3).map(p => `<img loading="lazy" src="${esc(p.img[0])}" alt="">`).join("")}</div>
+          <div class="pr"><b>${esc(new Date(day + "T12:00").toLocaleDateString(undefined, { month: "long", day: "numeric", year: "numeric" }))}</b>
+          <span>${items.length} piece${items.length > 1 ? "s" : ""} · ${items.filter(p => !p.av).length} sold out</span></div>${I.chev}</button>`).join("")}
+      </div></div>
+    ${disclaimer}`;
+  tick();
+}
+
+function renderWish(){
+  const items = S.wish.map(id => BY.get(id)).filter(Boolean);
+  const n = items.length;
+  $("#s-wish").innerHTML = `<div class="hdr"><h1>Wishlist</h1><span class="eyebrow">${n} saved</span></div>
+    ${n ? `<div class="wl">${items.map(p => {
+      const out = outCount(p), total = p.s.length;
+      const cls = !p.av ? "bad" : out ? "warn" : "";
+      const status = !p.av ? "Sold out, restock alerts available" : out ? `${total - out} of ${total} sizes in stock` : "In stock";
+      return `<div class="wl-item"><div class="wl-top"><img src="${esc(p.img[0])}" alt="" data-open="${p.id}">
+        <div class="wl-info"><b data-open="${p.id}">${esc(p.t)}</b><div class="pp">${priceHTML(p)}</div>
+          <div class="stock ${cls}"><i></i>${status}</div></div>
+        <button class="wl-x" data-wish="${p.id}" aria-label="Remove">${I.x}</button></div>
+        ${p.s.length ? `<div class="wl-sizes"><span class="eyebrow">Restock alerts by size</span><div class="alert-row">${p.s.map(([sz, av]) => av
+          ? `<span class="al instock">${esc(sz)}</span>`
+          : `<button class="al ${hasAlert(p.id, sz) ? "on" : ""}" data-alert="${p.id}" data-size="${esc(sz)}">${I.bell}${esc(sz)}</button>`).join("")}</div></div>` : ""}
+      </div>`;
+    }).join("")}</div>`
+    : `<div class="empty">${I.heart}<b>No saved items yet</b>Tap the heart on anything you like and we'll tell you when your size restocks.</div>
+       <div style="text-align:center"><button class="btn" data-tab="shop">Browse the shop</button></div>`}
+    ${disclaimer}`;
+  const cnt = $("#wish-cnt");
+  if (cnt) cnt.textContent = n || "";
+}
+
+function renderProfile(){
+  const order = P.filter(p => p.av).slice(2, 4);
+  const rows = [["drops", "Drop alerts", "Countdown + live notifications", I.drops], ["restock", "Restock alerts", "Your saved sizes only", I.bell],
+    ["orders", "Order updates", "Shipping + delivery", I.truck], ["promo", "Offers", "Member-only promos", I.star]];
+  $("#s-profile").innerHTML = `<div class="hdr"><h1>Profile</h1><button class="icon-btn" aria-label="Settings">${I.gear}</button></div>
+    <div class="me"><div class="avatar">JD</div><div><b>Jordan D.</b><span>Member since 2024 · 7 orders</span></div></div>
+    <div class="tier"><div class="tier-top"><div><div class="eyebrow">${brand} Crew</div><div class="tier-name">Gold member</div></div>
+      <div class="pts"><b data-count="2450">0</b><span>points</span></div></div>
+      <div class="bar"><i data-w="82%"></i></div><div class="bar-l"><span>550 pts to Platinum</span><span>3,000</span></div>
+      <div class="perks"><span>Early drop access</span><span>Free shipping</span><span>Birthday reward</span></div></div>
+    <div style="margin-top:28px"><div class="sec-h"><h2>Track order</h2><button>History</button></div>
+      <div class="order"><div class="order-top"><b>Order #${esc(C.slug.slice(0, 3).toUpperCase())}-10482</b><span>2 items</span></div>
+        <div class="eta"><small>Estimated delivery</small>Today · by 8 PM</div>
+        <div class="steps"><div class="prog" data-w="50%"></div>
+          ${["Ordered", "Shipped", "Out for delivery", "Delivered"].map((s, i) => `<div class="step ${i <= 2 ? (i === 2 ? "cur" : "done") : ""}"><i>${i <= 1 ? I.check : ""}</i>${s}</div>`).join("")}</div>
+        <div class="order-items">${order.map(p => `<img src="${esc(p.img[0])}" alt="" data-open="${p.id}">`).join("")}
+          <span>${I.truck.replace("<svg", '<svg style="width:14px;height:14px;vertical-align:-2px"')} In transit<br>UPS 1Z 84X 29A 03</span></div></div></div>
+    <div style="margin-top:28px"><div class="sec-h"><h2>Notifications</h2></div>
+      <div class="list">${rows.map(([k, t, d, ic]) => `<button class="row" data-pref="${k}"><span class="ri">${ic}</span>
+        <span class="rt"><b>${t}</b><span>${d}</span></span><span class="toggle ${S.prefs[k] ? "on" : ""}"></span></button>`).join("")}</div></div>
+    ${disclaimer}`;
+}
+function animateProfile(){
+  const el = $("#s-profile");
+  el.querySelectorAll("[data-w]").forEach(b => { b.style.width = "0"; requestAnimationFrame(() => requestAnimationFrame(() => b.style.width = b.dataset.w)); });
+  const n = el.querySelector("[data-count]"), target = +n.dataset.count, t0 = performance.now();
+  const step = t => { const k = Math.min(1, (t - t0) / 900), e = 1 - Math.pow(1 - k, 3); n.textContent = Math.round(target * e).toLocaleString(); if (k < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+
+/* ---------- product sheet ---------- */
+let sheetId = null, sheetSize = null;
+function openSheet(id){
+  const p = BY.get(+id); if (!p) return;
+  sheetId = p.id; sheetSize = null;
+  renderSheet(true);
+  $("#scrim").classList.add("on"); $("#sheet").classList.add("on");
+}
+function renderSheet(fresh){
+  const p = BY.get(sheetId), el = $("#sheet");
+  const sizesHTML = p.s.length ? p.s.map(([sz, av]) => av
+      ? `<button class="size ${sheetSize === sz ? "sel" : ""}" data-size-pick="${esc(sz)}"><span class="lbl">${esc(sz)}</span></button>`
+      : `<button class="size out ${hasAlert(p.id, sz) ? "alert" : ""}" data-alert="${p.id}" data-size="${esc(sz)}" aria-label="${esc(sz)} sold out, notify me">
+          ${I.bell.replace("<svg", '<svg class="bell"')}<span class="lbl">${esc(sz)}</span></button>`).join("")
+    : `<button class="size ${p.av ? "sel" : "out"}" style="grid-column:span 2">${p.av ? "One size" : "Sold out"}</button>`;
+  const anyOut = p.s.some(s => !s[1]);
+  const scroll = el.querySelector(".sheet-scroll"), keep = !fresh && scroll ? scroll.scrollTop : 0;
+  const carouselKeep = !fresh && el.querySelector(".carousel") ? el.querySelector(".carousel").scrollLeft : 0;
+  el.innerHTML = `<div class="grab"></div><button class="icon-btn close" data-close aria-label="Close">${I.x}</button>
+    <div class="sheet-scroll">
+      <div class="carousel" id="car">${p.img.map((src, i) => `<img src="${esc(src)}" alt="" ${i ? 'loading="lazy"' : ""}>`).join("")}</div>
+      <div class="dots">${p.img.length > 1 ? p.img.map((_, i) => `<i class="${i ? "" : "on"}"></i>`).join("") : ""}</div>
+      <div class="sb"><div class="eyebrow">${esc(p.c === "Other" ? C.name : p.c)}</div><h2>${esc(p.t)}</h2>
+        <div class="price">${p.cp ? `${money(p.p)}<s>${money(p.cp)}</s>` : money(p.p)}</div>
+        <div class="size-h"><b>Select size</b><span>${anyOut ? `${outCount(p)} sold out` : p.s.length ? "All sizes in stock" : ""}</span></div>
+        <div class="sizes">${sizesHTML}</div>
+        ${anyOut ? `<div class="hint">${I.bell}<span>Sold out in your size? Tap a greyed-out size and we'll notify you the moment it's back.</span></div>` : ""}
+        ${p.d ? `<div class="desc">${esc(p.d)}</div>` : ""}
+      </div></div>
+    <div class="sheet-cta"><button class="sq ${isWished(p.id) ? "on" : ""}" data-wish="${p.id}" aria-label="Add to wishlist">${I.heart}</button>
+      ${p.av ? `<button class="btn" data-add>${I.bag}<span>${sheetSize ? "Add to bag · " + money(p.p) : "Add to bag"}</span></button>`
+             : `<button class="btn" data-notify-any>${I.bell}<span>${(S.alerts[p.id] || []).length ? "Alert set" : "Notify me when back"}</span></button>`}</div>`;
+  if (!fresh) { el.querySelector(".sheet-scroll").scrollTop = keep; el.querySelector(".carousel").scrollLeft = carouselKeep; }
+  const car = $("#car"), dots = el.querySelectorAll(".dots i");
+  car.addEventListener("scroll", () => { const i = Math.round(car.scrollLeft / car.clientWidth); dots.forEach((d, j) => d.classList.toggle("on", i === j)); }, { passive: true });
+  if (!fresh) { const i = Math.round(carouselKeep / (car.clientWidth || 1)); dots.forEach((d, j) => d.classList.toggle("on", i === j)); }
+}
+function closeSheet(){ $("#scrim").classList.remove("on"); $("#sheet").classList.remove("on"); sheetId = null; }
+
+/* ---------- toast ---------- */
+let toastT;
+function toast(msg, icon = I.check){
+  const t = $("#toast");
+  t.querySelector("i").innerHTML = icon; t.querySelector("span").textContent = msg;
+  t.classList.add("on"); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("on"), 2200);
+}
+
+/* ---------- navigation ---------- */
+const TABS = [["home", "Home", I.home], ["shop", "Shop", I.shop], ["drops", "Drops", I.drops], ["wish", "Wishlist", I.heart], ["profile", "Profile", I.user]];
+$("#tabbar").innerHTML = TABS.map(([k, l, ic]) => `<button class="tab ${k === "home" ? "on" : ""}" data-tab="${k}">${ic}<span>${l}</span>${k === "wish" ? '<b class="cnt" id="wish-cnt"></b>' : ""}</button>`).join("");
+let current = "home";
+function go(tab){
+  if (sheetId) closeSheet();
+  const scr = $("#s-" + tab);
+  if (tab === current) { scr.scrollTo({ top: 0, behavior: "smooth" }); return; }
+  if (tab === "wish") renderWish();
+  if (tab === "drops") renderDrops();
+  if (tab === "profile") { renderProfile(); animateProfile(); }
+  if (tab === "shop") renderShop();
+  document.querySelectorAll(".screen").forEach(s => s.classList.toggle("active", s === scr));
+  document.querySelectorAll(".tab").forEach(t => t.classList.toggle("on", t.dataset.tab === tab));
+  current = tab;
+}
+window.__demo = { go, openSheet, closeSheet }; // handy for screenshots / presenting
+
+function refreshHearts(id){
+  document.querySelectorAll(`[data-wish="${id}"].heart, .sq[data-wish="${id}"]`).forEach(h => h.classList.toggle("on", isWished(id)));
+}
+function toggleWish(id){
+  id = +id;
+  const on = !isWished(id);
+  S.wish = on ? [id, ...S.wish] : S.wish.filter(x => x !== id);
+  save(); refreshHearts(id);
+  const cnt = $("#wish-cnt"); cnt.textContent = S.wish.length || ""; cnt.classList.add("bump"); setTimeout(() => cnt.classList.remove("bump"), 250);
+  if (current === "wish") renderWish();
+  toast(on ? "Saved to wishlist" : "Removed from wishlist", I.heart);
+}
+function toggleAlert(id, size){
+  id = +id;
+  const list = S.alerts[id] || [];
+  const on = !list.includes(size);
+  S.alerts[id] = on ? [...list, size] : list.filter(s => s !== size);
+  if (on && !isWished(id)) { S.wish = [id, ...S.wish]; $("#wish-cnt").textContent = S.wish.length; }
+  save();
+  if (sheetId === id) renderSheet(false);
+  if (current === "wish") renderWish();
+  toast(on ? `We'll ping you when ${size} is back` : `Alert off for ${size}`, I.bell);
+}
+function setReminder(){
+  S.dropReminder = !S.dropReminder; save();
+  if (current === "drops") renderDrops();
+  renderHome();
+  toast(S.dropReminder ? "You'll get a push when the drop goes live" : "Drop reminder off", I.bell);
+}
+
+$("#app").addEventListener("click", e => {
+  const t = e.target.closest("[data-wish],[data-alert],[data-size-pick],[data-add],[data-notify-any],[data-close],[data-remind],[data-chip],[data-gocat],[data-pref],[data-tab],[data-open]");
+  if (!t) { if (e.target.id === "scrim") closeSheet(); return; }
+  const d = t.dataset;
+  if (d.wish) return toggleWish(d.wish);
+  if (d.alert) return toggleAlert(d.alert, d.size);
+  if (d.sizePick !== undefined) { sheetSize = d.sizePick; return renderSheet(false); }
+  if (t.hasAttribute("data-add")) {
+    if (sheetId && BY.get(sheetId).s.length && !sheetSize) return toast("Pick a size first", I.bag);
+    return toast("Added to bag" + (sheetSize ? ` · size ${sheetSize}` : ""), I.bag);
+  }
+  if (t.hasAttribute("data-notify-any")) { const p = BY.get(sheetId); return toggleAlert(p.id, p.s.length ? p.s[0][0] : "One size"); }
+  if (t.hasAttribute("data-close")) return closeSheet();
+  if (t.hasAttribute("data-remind")) return setReminder();
+  if (d.chip) { shopCat = d.chip; renderShop(); return; }
+  if (d.gocat) { shopCat = d.gocat; renderShop(); return go("shop"); }
+  if (d.pref) { S.prefs[d.pref] = !S.prefs[d.pref]; save(); t.querySelector(".toggle").classList.toggle("on", S.prefs[d.pref]); return; }
+  if (d.tab) return go(d.tab);
+  if (d.open) return openSheet(d.open);
+});
+$("#scrim").addEventListener("click", closeSheet);
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeSheet(); });
+
+/* ---------- desktop phone scaling ---------- */
+function fit(){
+  const ph = $("#phone");
+  if (innerWidth <= 520) { ph.style.transform = ""; return; }
+  const s = Math.min(1, (innerHeight - 64) / 844, (innerWidth - 32) / 390);
+  ph.style.transform = `scale(${s})`;
+}
+addEventListener("resize", fit);
+
+renderHome(); renderShop(); renderWish();
+fit(); tick(); setInterval(tick, 1000);
+})();
+</script>
+</body>
+</html>

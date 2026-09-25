@@ -131,7 +131,8 @@ export default function JPXHome() {
       </section>
 
       <footer className="border-t border-border pt-8 text-xs text-muted-foreground flex flex-col sm:flex-row gap-2 sm:justify-between">
-        <div>© {new Date().getFullYear()} JPX Software Inc. · New York</div>
+        <div>© {new Date().getFullYear()} JPX Software Inc.</div>
+        <div>116 Astor Avenue, St. James, NY 11780</div>
       </footer>
     </div>
   )
